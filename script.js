@@ -386,13 +386,16 @@ function showNotification(message, type = 'info') {
 
     const n = document.createElement('div');
     n.className = 'notification';
-
+    // colors: error (red), info (blue), success/default (light purple)
     if (type === 'error') {
         n.style.background = '#e74c3c';
+        n.style.color = 'white';
     } else if (type === 'info') {
         n.style.background = '#3498db';
+        n.style.color = 'white';
     } else {
-        n.style.background = '#27ae60';
+        n.style.background = 'linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 60%)';
+        n.style.color = '#2b0650';
     }
 
     n.textContent = message;

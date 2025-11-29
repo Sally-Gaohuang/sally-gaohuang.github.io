@@ -654,16 +654,16 @@ body {
     position: fixed;
     top: 100px;
     right: 20px;
-    background: #27ae60;
-    color: white;
+    background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 60%);
+    color: #2b0650;
     padding: 1rem 1.5rem;
-    border-radius: 5px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.12);
     z-index: 10000;
     transform: translateX(400px);
     transition: transform 0.3s ease;
-    max-width: 300px;
-    font-size: 0.9rem;
+    max-width: 320px;
+    font-family: inherit;
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
