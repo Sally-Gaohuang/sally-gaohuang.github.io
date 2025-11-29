@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lin Zhi - Portfolio</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
 <body>
-    <!-- NAVIGATION -->
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <h2 id="nav-logo-text">LZ</h2>
+                <h2>Lin Zhi</h2>
             </div>
-
             <ul class="nav-menu">
-                <li><a href="#home" id="nav-home" class="nav-link active">Home</a></li>
-                <li><a href="#about" id="nav-about" class="nav-link">About</a></li>
-                <li><a href="#education" id="nav-education" class="nav-link">Education</a></li>
-                <li><a href="#experience" id="nav-experience" class="nav-link">Experience</a></li>
-                <li><a href="#skills" id="nav-skills" class="nav-link">Skills</a></li>
-                <li><a href="#contact" id="nav-contact" class="nav-link">Contact</a></li>
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#education" class="nav-link">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
             </ul>
-
-            <button id="languageBtn" class="lang-btn">中文</button>
-
+            <div class="language-toggle">
+                <button id="languageBtn" class="lang-btn">中文</button>
+            </div>
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -35,263 +45,262 @@
         </div>
     </nav>
 
-    <!-- HOME -->
+    <!-- Home Section -->
     <section id="home" class="home-section">
         <div class="home-container">
             <div class="home-content">
-                <h1 id="home-title" class="home-title">
-                    Hello, I'm <span class="highlight">Lin Zhi</span>
-                </h1>
-                <p id="home-subtitle" class="home-subtitle">
-                    Web Developer & Creative Problem Solver
-                </p>
-                <p id="home-description" class="home-description">
-                    Passionate about creating beautiful, functional websites with modern technologies.
+                <h1 class="home-title">Hello, I'm <span class="highlight">Lin Zhi</span></h1>
+                <p class="home-subtitle">Web Developer & Creative Problem Solver</p>
+                <p class="home-description">
+                    Passionate about creating beautiful, functional websites with modern technologies. 
                     Strong learning attitude and commitment to clean code and user experience.
                 </p>
-
                 <div class="home-buttons">
-                    <a id="btn-contact" href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a id="btn-learn" href="#about" class="btn btn-secondary">Learn More</a>
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a href="#about" class="btn btn-secondary">Learn More</a>
                 </div>
-
                 <div class="social-links">
-                    <a class="social-link"><i class="fab fa-github"></i></a>
-                    <a class="social-link"><i class="fab fa-linkedin"></i></a>
-                    <a class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a class="social-link"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/yourusername" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/yourprofile" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/yourhandle" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="mailto:linzhiatwork@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
-
             <div class="home-image">
-                <div class="image-container home-img-large">
-                    <img src="images/flower.jpg" alt="Lin Zhi" class="profile-image" />
+                <div class="image-container">
+                    <img src="images/spring.jpg" alt="Lin Zhi" class="profile-image">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ABOUT -->
+    <!-- About Section -->
     <section id="about" class="section">
         <div class="container">
-            <h2 id="about-title" class="section-title">About Me</h2>
-
+            <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h3 id="my-journey">My Journey</h3>
-
-                    <p id="about-text-1">
-                        I'm a passionate web developer with experience in creating dynamic, responsive websites.
+                    <h3>My Journey</h3>
+                    <p>
+                        I'm a passionate web developer with experience in creating dynamic, responsive websites. 
                         My journey in tech started with a strong curiosity about technology and how things work.
                     </p>
-
-                    <p id="about-text-2">
-                        Knowledge decent with strong learning attitude. Good relationship with professionals in academic.
+                    <p>
+                        Knowledge decent with strong learning attitude. Good relationship with professionals in academic. 
                         I enjoy working across the full stack and constantly expanding my skill set.
                     </p>
-
                     <div class="about-stats">
                         <div class="stat">
                             <span class="stat-number">2+</span>
-                            <span class="stat-label" id="label-exp">Years Experience</span>
+                            <span class="stat-label">Years Experience</span>
                         </div>
                         <div class="stat">
                             <span class="stat-number">50+</span>
-                            <span class="stat-label" id="label-projects">Projects Completed</span>
+                            <span class="stat-label">Projects Completed</span>
                         </div>
                         <div class="stat">
                             <span class="stat-number">100%</span>
-                            <span class="stat-label" id="label-satisfaction">Client Satisfaction</span>
+                            <span class="stat-label">Client Satisfaction</span>
                         </div>
                     </div>
                 </div>
-
-                <!-- BIGGER ABOUT IMAGE -->
                 <div class="about-image">
-                    <div class="image-container about-img-medium">
-                        <img src="images/my.PNG" class="profile-image" />
+                    <div class="image-container">
+                        <img src="images/my.PNG" alt="Lin Zhi" class="profile-image">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- EDUCATION -->
+    <!-- Education Section -->
     <section id="education" class="section">
         <div class="container">
-            <h2 id="education-title" class="section-title">Education</h2>
-
+            <h2 class="section-title">Education</h2>
             <div class="education-timeline">
                 <div class="timeline-item">
                     <div class="timeline-date">2020 - 2024</div>
                     <div class="timeline-content">
-                        <h3 id="edu-degree1">Bachelor of Information Technology</h3>
-                        <p class="institution" id="edu-uni1">National University of Singapore</p>
-                        <p class="details" id="edu-details1">
-                            Graduated from School of Computing, NUS. Strong academic background with focus on software development.
+                        <h3>Bachelor of Information Technology</h3>
+                        <p class="institution">National University of Singapore</p>
+                        <p class="details">
+                            Graduated from School of Computing, NUS. Strong academic background with focus on 
+                            software development and modern technologies.
                         </p>
+                        <ul class="achievements">
+                            <li>Knowledge decent with strong learning attitude</li>
+                            <li>Good relationship with professionals in academic</li>
+                            <li>Graduated from School of Computing, NUS</li>
+                        </ul>
                     </div>
                 </div>
-
                 <div class="timeline-item">
                     <div class="timeline-date">2018 - 2020</div>
                     <div class="timeline-content">
-                        <h3 id="edu-degree2">Human-Capital Management Diploma</h3>
-                        <p class="institution" id="edu-uni2">Republic Polytechnic</p>
-                        <p class="details" id="edu-details2">
-                            HR Analytics, Digital Marketing, Business Law, and Digital Media Technologies.
+                        <h3>Human-Capital Management Diploma</h3>
+                        <p class="institution">Republic Polytechnic of Singapore</p>
+                        <p class="details">
+                            HR Analytics & Technology, Business Law, Digital Marketing Analytics, 
+                            Digital Business Strategies, Digital Media Content Creation & Management.
                         </p>
+                        <ul class="achievements">
+                            <li>Technical based support</li>
+                            <li>Customer Satisfaction with tailor made support</li>
+                            <li>Founder of 汉字学问</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- EXPERIENCE -->
+    <!-- Experience Section -->
     <section id="experience" class="section">
         <div class="container">
-            <h2 id="experience-title" class="section-title">Work Experience</h2>
-
+            <h2 class="section-title">Work Experience</h2>
             <div class="experience-grid">
                 <div class="experience-card">
                     <div class="card-header">
-                        <h3 id="job1-title">Senior Software Developer</h3>
-                        <span class="company" id="job1-company">Tech Innovations Inc.</span>
+                        <h3>Senior Software Developer</h3>
+                        <span class="company">Tech Innovations Inc.</span>
+                        <span class="duration">2022 - Present</span>
                     </div>
+                    <ul class="responsibilities">
+                        <li>Collaborate with cross-functional teams to design and implement new features</li>
+                        <li>Mentor junior developers and conduct code reviews</li>
+                        <li>Optimize application performance, reducing load times by 40%</li>
+                    </ul>
                 </div>
-
                 <div class="experience-card">
                     <div class="card-header">
-                        <h3 id="job2-title">Web Development Intern</h3>
-                        <span class="company" id="job2-company">Startup Solutions LLC</span>
+                        <h3>Web Development Intern</h3>
+                        <span class="company">Startup Solutions LLC</span>
+                        <span class="duration">2021 - 2022</span>
                     </div>
+                    <ul class="responsibilities">
+                        <li>Developed and maintained front-end features using HTML, CSS, and JavaScript</li>
+                        <li>Assisted in backend API development with Python and Django</li>
+                        <li>Participated in agile development methodologies and sprint planning</li>
+                        <li>Collaborated with UX/UI designers to implement responsive designs</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SKILLS -->
+    <!-- Skills Section -->
     <section id="skills" class="section">
         <div class="container">
-            <h2 id="skills-title" class="section-title">Skills & Technologies</h2>
-
+            <h2 class="section-title">Skills & Technologies</h2>
             <div class="skills-container">
-                <div class="skills-column">
-                    <h3 id="technical-skills">Technical Skills</h3>
-
-                    <div class="skill" data-percent="85">
-                        <div class="skill-name">Python (Flask, backend)</div>
-                        <div class="progress">
-                            <div class="progress-fill"></div>
-                            <div class="progress-percent">85%</div>
+                <div class="skills-category">
+                    <h3>Technical Skills</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">HTML/CSS</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="90"></div>
                         </div>
                     </div>
-
-                    <div class="skill" data-percent="90">
-                        <div class="skill-name">HTML, CSS, JavaScript</div>
-                        <div class="progress">
-                            <div class="progress-fill"></div>
-                            <div class="progress-percent">90%</div>
+                    <div class="skill-item">
+                        <span class="skill-name">JavaScript</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="85"></div>
                         </div>
                     </div>
-
-                    <div class="skill" data-percent="70">
-                        <div class="skill-name">React (front-end)</div>
-                        <div class="progress">
-                            <div class="progress-fill"></div>
-                            <div class="progress-percent">70%</div>
+                    <div class="skill-item">
+                        <span class="skill-name">React</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="75"></div>
                         </div>
                     </div>
-
-                    <div class="skill" data-percent="75">
-                        <div class="skill-name">SQL (MySQL)</div>
-                        <div class="progress">
-                            <div class="progress-fill"></div>
-                            <div class="progress-percent">75%</div>
-                        </div>
-                    </div>
-
-                    <div class="skill" data-percent="80">
-                        <div class="skill-name">REST API development</div>
-                        <div class="progress">
-                            <div class="progress-fill"></div>
-                            <div class="progress-percent">80%</div>
+                    <div class="skill-item">
+                        <span class="skill-name">Node.js</span>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="70"></div>
                         </div>
                     </div>
                 </div>
-
-                <div class="skills-column">
-                    <h3 id="tools-tech">Tools & Technologies</h3>
-
-                    <div class="skill" data-percent="95">
-                        <div class="skill-name">VS Code</div>
-                        <div class="progress">
-                            <div class="progress-fill"></div>
-                            <div class="progress-percent">95%</div>
-                        </div>
+                <div class="skills-category">
+                    <h3>Tools & Technologies</h3>
+                    <div class="tools-grid">
+                        <span class="tool-tag">Git</span>
+                        <span class="tool-tag">VS Code</span>
+                        <span class="tool-tag">Figma</span>
+                        <span class="tool-tag">MongoDB</span>
+                        <span class="tool-tag">PostgreSQL</span>
+                        <span class="tool-tag">Docker</span>
+                        <span class="tool-tag">AWS</span>
+                        <span class="tool-tag">REST APIs</span>
                     </div>
-
-                    <div class="skill" data-percent="80">
-                        <div class="skill-name">PyCharm</div>
-                        <div class="progress">
-                            <div class="progress-fill"></div>
-                            <div class="progress-percent">80%</div>
-                        </div>
-                    </div>
-
-                    <div class="skill" data-percent="70">
-                        <div class="skill-name">MySQL Workbench</div>
-                        <div class="progress">
-                            <div class="progress-fill"></div>
-                            <div class="progress-percent">70%</div>
-                        </div>
-                    </div>
-
-                    <div class="skill" data-percent="75">
-                        <div class="skill-name">Postman</div>
-                        <div class="progress">
-                            <div class="progress-fill"></div>
-                            <div class="progress-percent">75%</div>
-                        </div>
-                    </div>
-
-                    <div class="skill" data-percent="65">
-                        <div class="skill-name">Figma (UI/UX)</div>
-                        <div class="progress">
-                            <div class="progress-fill"></div>
-                            <div class="progress-percent">65%</div>
-                        </div>
+                    <h3>Soft Skills</h3>
+                    <div class="soft-skills">
+                        <span class="soft-skill-tag">Problem Solving</span>
+                        <span class="soft-skill-tag">Team Collaboration</span>
+                        <span class="soft-skill-tag">Communication</span>
+                        <span class="soft-skill-tag">Time Management</span>
+                        <span class="soft-skill-tag">Leadership</span>
+                        <span class="soft-skill-tag">Adaptability</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
-            <h2 id="contact-title" class="section-title">Get In Touch</h2>
-
+            <h2 class="section-title">Get In Touch</h2>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3 id="contact-welcome">You are welcomed</h3>
-                    <p id="contact-text">I'm always open to discussing new opportunities.</p>
+                    <h3>You are welcomed</h3>
+                    <p>I'm always open to discussing new opportunities and creative projects.</p>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <span>linzhiatwork@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Location</strong>
+                                <span>China and Singapore</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/yourusername" class="social-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://linkedin.com/in/yourprofile" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="https://twitter.com/yourhandle" class="social-link"><i class="fab fa-twitter"></i> Twitter</a>
+                    </div>
                 </div>
-
                 <form class="contact-form">
-                    <input id="input-name" type="text" placeholder="Your Name" required />
-                    <input id="input-email" type="email" placeholder="Your Email" required />
-                    <textarea id="input-message" placeholder="Your Message"></textarea>
-                    <button type="submit" id="send-message" class="btn btn-primary">Send Message</button>
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary submit-btn">Send Message</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2024 Lin Zhi. All rights reserved.</p>
-        <p id="footer-built">Built using HTML, CSS, and JavaScript</p>
+        <div class="container">
+            <p>&copy; 2024 LinZhi. All rights reserved.</p>
+            <p>Built with HTML, CSS, and JavaScript</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
