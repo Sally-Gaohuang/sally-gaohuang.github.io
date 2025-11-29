@@ -484,4 +484,11 @@ function initializeSkillBars() {
     }, { threshold: 0.2 });
 
     obs.observe(skillsSection);
+
+    // Fallback: if the section is already mostly visible on load, animate immediately
+    const rect = skillsSection.getBoundingClientRect();
+    if (rect.top < (window.innerHeight || document.documentElement.clientHeight) - 100) {
+        animateAll();
+        try { obs.disconnect(); } catch (e) {}
+    }
 }
