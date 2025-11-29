@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lin Zhi - Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+
+<body>
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2 id="nav-logo-text">Lin Zhi</h2>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="#home" id="nav-home" class="nav-link active">Home</a></li>
+                <li><a href="#about" id="nav-about" class="nav-link">About</a></li>
+                <li><a href="#education" id="nav-education" class="nav-link">Education</a></li>
+                <li><a href="#experience" id="nav-experience" class="nav-link">Experience</a></li>
+                <li><a href="#skills" id="nav-skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" id="nav-contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <button id="languageBtn" class="lang-btn">中文</button>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME -->
+    <section id="home" class="home-section">
+        <div class="home-container">
+            <div class="home-content">
+                <h1 id="home-title" class="home-title">
+                    Hello, I'm <span class="highlight">Lin Zhi</span>
+                </h1>
+                <p id="home-subtitle" class="home-subtitle">
+                    Web Developer & Creative Problem Solver
+                </p>
+                <p id="home-description" class="home-description">
+                    Passionate about creating beautiful, functional websites with modern technologies.
+                    Strong learning attitude and commitment to clean code and user experience.
+                </p>
+
+                <div class="home-buttons">
+                    <a id="btn-contact" href="#contact" class="btn btn-primary">Get In Touch</a>
+                    <a id="btn-learn" href="#about" class="btn btn-secondary">Learn More</a>
+                </div>
+
+                <div class="social-links">
+                    <a class="social-link"><i class="fab fa-github"></i></a>
+                    <a class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a class="social-link"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+
+            <div class="home-image">
+                <div class="image-container home-img-large">
+                    <img src="images/my.PNG" alt="Lin Zhi" class="profile-image" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 id="about-title" class="section-title">About Me</h2>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <h3 id="my-journey">My Journey</h3>
+
+                    <p id="about-text-1">
+                        I'm a passionate web developer with experience in creating dynamic, responsive websites.
+                        My journey in tech started with a strong curiosity about technology and how things work.
+                    </p>
+
+                    <p id="about-text-2">
+                        Knowledge decent with strong learning attitude. Good relationship with professionals in academic.
+                        I enjoy working across the full stack and constantly expanding my skill set.
+                    </p>
+
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">2+</span>
+                            <span class="stat-label" id="label-exp">Years Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label" id="label-projects">Projects Completed</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label" id="label-satisfaction">Client Satisfaction</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BIGGER ABOUT IMAGE -->
+                <div class="about-image">
+                    <div class="image-container about-img-medium">
+                        <img src="images/my.PNG" class="profile-image" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 id="education-title" class="section-title">Education</h2>
+
+            <div class="education-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2020 - 2024</div>
+                    <div class="timeline-content">
+                        <h3 id="edu-degree1">Bachelor of Information Technology</h3>
+                        <p class="institution" id="edu-uni1">National University of Singapore</p>
+                        <p class="details" id="edu-details1">
+                            Graduated from School of Computing, NUS. Strong academic background with focus on software development.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2018 - 2020</div>
+                    <div class="timeline-content">
+                        <h3 id="edu-degree2">Human-Capital Management Diploma</h3>
+                        <p class="institution" id="edu-uni2">Republic Polytechnic</p>
+                        <p class="details" id="edu-details2">
+                            HR Analytics, Digital Marketing, Business Law, and Digital Media Technologies.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 id="experience-title" class="section-title">Work Experience</h2>
+
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="card-header">
+                        <h3 id="job1-title">Senior Software Developer</h3>
+                        <span class="company" id="job1-company">Tech Innovations Inc.</span>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="card-header">
+                        <h3 id="job2-title">Web Development Intern</h3>
+                        <span class="company" id="job2-company">Startup Solutions LLC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 id="skills-title" class="section-title">Skills & Technologies</h2>
+
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3 id="technical-skills">Technical Skills</h3>
+                </div>
+
+                <div class="skills-category">
+                    <h3 id="tools-tech">Tools & Technologies</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 id="contact-title" class="section-title">Get In Touch</h2>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 id="contact-welcome">You are welcomed</h3>
+                    <p id="contact-text">I'm always open to discussing new opportunities.</p>
+                </div>
+
+                <form class="contact-form">
+                    <input id="input-name" type="text" placeholder="Your Name" required />
+                    <input id="input-email" type="email" placeholder="Your Email" required />
+                    <textarea id="input-message" placeholder="Your Message"></textarea>
+                    <button type="submit" id="send-message" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2024 Lin Zhi. All rights reserved.</p>
+        <p id="footer-built">Built using HTML, CSS, and JavaScript</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
