@@ -418,6 +418,8 @@ function initializeAnimations() {
 
     window.addEventListener('scroll', triggerScrollAnimations);
     triggerScrollAnimations();
+    // initialize skill bars animation when skills section appears
+    initializeSkillBars();
 }
 
 function triggerScrollAnimations() {
@@ -431,4 +433,55 @@ function triggerScrollAnimations() {
             el.style.transform = 'translateY(0)';
         }
     });
+}
+
+// ===== SKILL BARS =====
+function colorForPercent(p) {
+    if (p >= 85) return 'linear-gradient(90deg,#38ef7d,#11998e)'; // green
+    if (p >= 70) return 'linear-gradient(90deg,#f6d365,#fda085)'; // yellow/orange
+    if (p >= 50) return 'linear-gradient(90deg,#f093fb,#f5576c)'; // pink/orange
+    return 'linear-gradient(90deg,#f85032,#e73827)'; // red
+}
+
+function initializeSkillBars() {
+    // Support both new (.progress-fill) and older (.skill-level) markup
+    const skillsSection = document.getElementById('skills');
+    if (!skillsSection) return;
+
+    const animateAll = () => {
+        // New markup: .skill elements with data-percent and .progress-fill
+        const skills = document.querySelectorAll('.skill[data-percent]');
+        skills.forEach(skill => {
+            const percent = Math.max(0, Math.min(100, parseInt(skill.getAttribute('data-percent') || '0', 10)));
+            const fill = skill.querySelector('.progress-fill');
+            const label = skill.querySelector('.progress-percent');
+            if (fill) {
+                fill.style.width = percent + '%';
+                fill.style.background = colorForPercent(percent);
+            }
+            if (label) label.textContent = percent + '%';
+        });
+
+        // Older markup: .skill-level elements with data-level attribute
+        const oldLevels = document.querySelectorAll('.skill-level[data-level]');
+        oldLevels.forEach(levelEl => {
+            const raw = levelEl.getAttribute('data-level') || levelEl.getAttribute('data-percent') || '0%';
+            // allow values like '85' or '85%'
+            const percent = Math.max(0, Math.min(100, parseInt(raw.replace('%',''), 10)));
+            levelEl.style.width = percent + '%';
+            // set color based on percent
+            levelEl.style.background = colorForPercent(percent);
+        });
+    };
+
+    const obs = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateAll();
+                observer.disconnect();
+            }
+        });
+    }, { threshold: 0.2 });
+
+    obs.observe(skillsSection);
 }
