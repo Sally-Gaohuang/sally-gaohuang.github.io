@@ -3,17 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My - Portfolio</title>
+    <title>Lin Zhi - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Skill bar styles (from your previous inline <style>) -->
     <style>
-        /* Add these styles for the animated skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+        .skills-category h3 {
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
         .skill-item {
             margin-bottom: 1.5rem;
         }
-        .skill-name {
-            display: block;
-            margin-bottom: 0.5rem;
+        .skill-name-wrapper {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.4rem;
             font-weight: 600;
             color: #333;
         }
@@ -32,223 +43,258 @@
             transition: width 1.5s ease-in-out;
             position: relative;
         }
-        .skill-level::after {
-            content: attr(data-level) "%";
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: white;
-            font-size: 0.7em;
-            font-weight: bold;
-        }
-        .tools-grid, .soft-skills {
+        .tools-list, .soft-skills-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 1.5rem;
+            gap: 0.5rem;
         }
-        .tool-tag, .soft-skill-tag {
+        .tool-item, .soft-skill-item {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 8px 16px;
+            padding: 6px 14px;
             border-radius: 20px;
-            font-size: 0.9em;
+            font-size: 0.85rem;
             font-weight: 500;
-            transition: transform 0.3s ease;
+            white-space: nowrap;
         }
-        .tool-tag:hover, .soft-skill-tag:hover {
-            transform: translateY(-2px);
+
+        /* Simple contact layout to work with your media query using .contact-wrapper */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+            gap: 2.5rem;
+            align-items: flex-start;
+        }
+        .contact-info p {
+            margin-bottom: 1rem;
+        }
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .contact-method {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+        .contact-method i {
+            font-size: 1.2rem;
+        }
+        .contact-form .form-group {
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        .contact-form label {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            padding: 0.6rem 0.75rem;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            font-size: 0.95rem;
+            font-family: inherit;
+        }
+        .contact-form textarea {
+            resize: vertical;
+        }
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            text-decoration: none;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <h2>Lin Zhi</h2>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
-                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
-                <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
-                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="language-toggle">
-                <button id="languageBtn" class="lang-btn">中文</button>
-            </div>
 
-            
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo"><strong>LZ</strong></div>
+            <div class="sidebar-tagline">Web Developer &amp; UI/UX Designer</div>
         </div>
-    </nav>
 
-    <!-- Home Section -->
-    <section id="home" class="home-section">
-        <div class="home-container">
-            <div class="home-content">
-                <h1 class="home-title">Hello, welcome to <span class="highlight">My Webpage</span></h1>
-                <p class="home-subtitle"><span class="highlight"></span>Web Developer & Creative Problem Solver</span></p>
-                <p class="home-description">
-                    Passionate about creating beautiful, functional websites with modern technologies. 
-                    Strong learning attitude and commitment to clean code and user experience.
+        <ul class="sidebar-menu">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- Language button (works with your JS language toggle) -->
+        <div class="language-switcher">
+            <button id="languageBtn" class="lang-btn">中文</button>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HERO / HOME SECTION -->
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h1>Hello, I'm <span class="gradient-text">Lin Zhi</span></h1>
+                <p class="hero-subtitle">Web Developer • UI/UX Designer • Problem Solver</p>
+                <p class="hero-description">
+                    I build modern, fast, elegant websites and web applications.
+                    My focus is clean code, beautiful UI, and real business results.
                 </p>
-                <div class="home-buttons">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="#about" class="btn btn-secondary">Learn More</a>
-                </div>
-                <div class="social-links">
-                    <a href="https://github.com/yourusername" class="social-link"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com/in/yourprofile" class="social-link"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://twitter.com/yourhandle" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="mailto:linzhiatwork@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-            <div class="home-image">
-                <div class="image-container">
-                    <img src="images/mt.jpg" alt="Lin Zhi" class="profile-image">
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn primary-btn">Contact Me</a>
+                    <a href="#about" class="btn secondary-btn">About Me</a>
+                </div>
+
+                <div class="hero-icons">
+                    <a href="https://github.com/Sally-Gaohuang" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/%E6%B1%89%E5%AD%97%E5%AD%A6%E9%97%AE-possible-hanzi-a1a44212b" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:linzhiatwork@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                </div>
+            </div>
+
+            <div class="hero-image-container">
+                <img src="images/my.PNG" alt="Lin Zhi" class="hero-image">
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="section">
             <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>My Journey</h3>
-                    <p>
-                        I'm a passionate web developer with experience in creating dynamic, responsive websites. 
-                        My journey in tech started with a strong curiosity about technology and how things work.
-                    </p>
-                    <p>
-                        Knowledge decent with strong learning attitude. Good relationship with professionals in academic. 
-                        I enjoy working across the full stack and constantly expanding my skill set.
-                    </p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <span class="stat-number">2+</span>
-                            <span class="stat-label">Years Experience</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">50+</span>
-                            <span class="stat-label">Projects Completed</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">Client Satisfaction</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image">
-                    <div class="image-container">
-                        <img src="images/my.PNG" alt="Lin Zhi" class="profile-image">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Education Section -->
-    <section id="education" class="section">
-        <div class="container">
+            <!-- These two paragraphs are what your JS language system will replace -->
+            <p class="about-paragraph">
+                I'm a passionate web developer who transforms ideas into clean, modern and functional digital experiences.
+                With strong learning ability and hands-on project experience, I help small businesses and individuals build
+                a professional and trustworthy online presence.
+            </p>
+            <p class="about-paragraph">
+                I specialize in frontend development, UI/UX design, and building complete web solutions that are visually appealing,
+                responsive, and optimized for performance.
+            </p>
+
+            <div class="about-stats-v2">
+                <a href="#experience" class="stat-card fade-in-up">
+                    <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="stat-number">2+</div>
+                    <div class="stat-label">Years Experience</div>
+                </a>
+                <a href="#skills" class="stat-card fade-in-up">
+                    <div class="stat-icon"><i class="fas fa-code"></i></div>
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Projects Delivered</div>
+                </a>
+                <a href="#contact" class="stat-card fade-in-up">
+                    <div class="stat-icon"><i class="fas fa-heart"></i></div>
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </a>
+            </div>
+        </section>
+
+        <!-- EDUCATION SECTION -->
+        <section id="education" class="section">
             <h2 class="section-title">Education</h2>
-            <div class="education-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">2020 - 2024</div>
-                    <div class="timeline-content">
-                        <h3>Bachelor of Information Technology</h3>
-                        <p class="institution">National University of Singapore</p>
-                        <p class="details">
-                            Graduated from School of Computing, NUS. Strong academic background with focus on 
-                            software development and modern technologies.
+
+            <div class="edu-list">
+                <div class="edu-item fade-in-up">
+                    <div class="edu-dot"></div>
+                    <div class="edu-content">
+                        <span class="edu-year">2023 – 2026</span>
+                        <h3>Bachelor of Information Technology — National University of Singapore (NUS)</h3>
+                        <p class="edu-desc">
+                            School of Computing, focusing on software development, database systems,
+                            data analytics and applied machine learning.
                         </p>
-                        <ul class="achievements">
-                            <li>Knowledge decent with strong learning attitude</li>
-                            <li>Good relationship with professionals in academic</li>
-                            <li>Graduated from School of Computing, NUS</li>
-                        </ul>
+                        <div class="edu-tags">
+                            <span>Software Engineering</span>
+                            <span>Database Systems</span>
+                            <span>Data Analytics</span>
+                            <span>Machine Learning</span>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-date">2018 - 2020</div>
-                    <div class="timeline-content">
-                        <h3>Human-Capital Management Diploma</h3>
-                        <p class="institution">Republic Polytechnic of Singapore</p>
-                        <p class="details">
-                            HR Analytics & Technology, Business Law, Digital Marketing Analytics, 
-                            Digital Business Strategies, Digital Media Content Creation & Management.
+
+                <div class="edu-item fade-in-up">
+                    <div class="edu-dot"></div>
+                    <div class="edu-content">
+                        <span class="edu-year">2018 – 2020</span>
+                        <h3>Diploma in Human Capital Management — Republic Polytechnic</h3>
+                        <p class="edu-desc">
+                            Built strong foundations in HR operations, workforce analytics, business strategy
+                            and organisational behaviour.
                         </p>
-                        <ul class="achievements">
-                            <li>Technical based support</li>
-                            <li>Customer Satisfaction with tailor made support</li>
-                            <li>Founder of 汉字学问-possible-hanzi</li>
-                        </ul>
+                        <div class="edu-tags">
+                            <span>HR Analytics</span>
+                            <span>Business Strategy</span>
+                            <span>Digital HR</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section">
-        <div class="container">
-            <h2 class="section-title">Work Experience</h2>
+        <!-- EXPERIENCE SECTION -->
+        <section id="experience" class="section">
+            <h2 class="section-title">Experience</h2>
+
             <div class="experience-grid">
-                <div class="experience-card">
-                    <div class="card-header">
-                        <h3>Senior Software Developer - Freddy</h3>
-                        <span class="company">Tech Innovations Inc.</span>
-                        <span class="duration">2022 - Present</span>
-                    </div>
+                <div class="experience-card fade-in-up">
+                    <h3>Senior Software Developer — Freddy</h3>
+                    <p class="duration">2022 – Present</p>
                     <ul class="responsibilities">
-                        <li>Collaborate with cross-functional teams to design and implement new features</li>
-                        <li>Mentor junior developers and conduct code reviews</li>
-                        <li>Optimize application performance, reducing load times by 40%</li>
+                        <li>Collaborate with cross-functional teams to design and implement new features.</li>
+                        <li>Mentor junior developers and conduct code reviews.</li>
+                        <li>Optimize application performance, improving load times and reliability.</li>
                     </ul>
                 </div>
-                <div class="experience-card">
-                    <div class="card-header">
-                        <h3>Web Development (UI/UX) - Sally</h3>
-                        <span class="company">Startup Solutions LLC</span>
-                        <span class="duration">2021 - </span>
-                    </div>
+
+                <div class="experience-card fade-in-up">
+                    <h3>UI/UX & Web Developer — Sally</h3>
+                    <p class="duration">2021 – Present</p>
                     <ul class="responsibilities">
-                        <li>Developed and maintained front-end features using HTML, CSS, and JavaScript</li>
-                        <li>Assisted in backend API development with Python and Django</li>
-                        <li>Participated in agile development methodologies and sprint planning</li>
-                        <li>Collaborated with UX/UI designers to implement responsive designs</li>
+                        <li>Develop and maintain front-end features using HTML, CSS and JavaScript.</li>
+                        <li>Assist in backend API integration using Python-based frameworks.</li>
+                        <li>Implement responsive designs based on UX/UI wireframes.</li>
+                        <li>Work closely with stakeholders to improve user experience.</li>
                     </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="section">
+            <h2 class="section-title">Skills</h2>
+
             <div class="skills-container">
-                <div class="skills-category">
+                <div class="skills-category fade-in-up">
                     <h3>Technical Skills</h3>
+
                     <div class="skill-item">
                         <div class="skill-name-wrapper">
-                            <span class="skill-name">HTML/CSS</span>
+                            <span class="skill-name">HTML / CSS</span>
                             <span class="skill-percentage">90%</span>
                         </div>
                         <div class="skill-bar">
                             <div class="skill-level" data-level="90"></div>
                         </div>
                     </div>
+
                     <div class="skill-item">
                         <div class="skill-name-wrapper">
                             <span class="skill-name">JavaScript</span>
@@ -258,6 +304,7 @@
                             <div class="skill-level" data-level="85"></div>
                         </div>
                     </div>
+
                     <div class="skill-item">
                         <div class="skill-name-wrapper">
                             <span class="skill-name">React</span>
@@ -267,6 +314,7 @@
                             <div class="skill-level" data-level="75"></div>
                         </div>
                     </div>
+
                     <div class="skill-item">
                         <div class="skill-name-wrapper">
                             <span class="skill-name">Node.js</span>
@@ -277,20 +325,23 @@
                         </div>
                     </div>
                 </div>
-                <div class="skills-category">
-                    <h3>Tools & Technologies</h3>
+
+                <div class="skills-category fade-in-up">
+                    <h3>Tools &amp; Technologies</h3>
                     <div class="tools-list">
                         <div class="tool-item">Git</div>
-                        <div class="tool-item">Docker, Ubuntu</div>
-                        <div class="tool-item">VS Code, GoogleColab</div>
+                        <div class="tool-item">Docker</div>
+                        <div class="tool-item">Ubuntu</div>
+                        <div class="tool-item">VS Code</div>
+                        <div class="tool-item">Google Colab</div>
                         <div class="tool-item">AWS</div>
                         <div class="tool-item">Figma</div>
                         <div class="tool-item">REST APIs</div>
                         <div class="tool-item">MongoDB</div>
                         <div class="tool-item">PostgreSQL</div>
                     </div>
-                    
-                    <h3>Soft Skills</h3>
+
+                    <h3 style="margin-top:1.5rem;">Soft Skills</h3>
                     <div class="soft-skills-list">
                         <div class="soft-skill-item">Problem Solving</div>
                         <div class="soft-skill-item">Time Management</div>
@@ -301,77 +352,83 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section">
+            <h2 class="section-title">Contact</h2>
+
+            <div class="contact-wrapper">
                 <div class="contact-info">
-                    <h3>You are welcomed</h3>
+                    <h3>Let&#39;s Connect</h3>
                     <p>I'm always open to discussing new opportunities and creative projects.</p>
+
                     <div class="contact-methods">
                         <div class="contact-method">
                             <i class="fas fa-envelope"></i>
                             <div>
-                                <strong>Email</strong>
+                                <strong>Email</strong><br>
                                 <span>linzhiatwork@gmail.com</span>
                             </div>
                         </div>
                         <div class="contact-method">
                             <i class="fas fa-map-marker-alt"></i>
                             <div>
-                                <strong>Location</strong>
-                                <span>China and Singapore</span>
+                                <strong>Location</strong><br>
+                                <span>China &amp; Singapore</span>
                             </div>
                         </div>
                     </div>
+
                     <div class="social-links">
-                        <a href="https://github.com/Sally-Gaohuang/hanzi-student-portal" class="social-link"><i class="fab fa-github"></i> GitHub</a>
-                        <a href="linkedin.com/in/汉字学问-possible-hanzi-a1a44212b" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                        <a href="https://twitter.com/yourhandle" class="social-link"><i class="fab fa-twitter"></i> Twitter</a>
+                        <a href="https://github.com/Sally-Gaohuang/hanzi-student-portal" class="social-link" target="_blank">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/%E6%B1%89%E5%AD%97%E5%AD%A6%E9%97%AE-possible-hanzi-a1a44212b" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
                     </div>
                 </div>
+
                 <form class="contact-form">
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <label for="name">Your Name</label>
+                        <input id="name" name="name" type="text" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <label for="email">Your Email</label>
+                        <input id="email" name="email" type="email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Subject" required>
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
                     </div>
-                    <div class="form-group">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary submit-btn">Send Message</button>
+                    <button type="submit" class="btn primary-btn contact-submit-btn">Send Message</button>
                 </form>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 LinZhi. All rights reserved.</p>
-            <p>Built with HTML, CSS, and JavaScript</p>
-        </div>
-    </footer>
+        <!-- FOOTER -->
+        <footer class="footer section" style="padding-top:2rem;">
+            <p>&copy; 2024 Lin Zhi. All rights reserved.</p>
+            <p>Built with passion and modern web technologies.</p>
+        </footer>
 
+    </main>
+
+    <!-- Your script file with language toggle, scroll, etc. -->
     <script src="script.js"></script>
+
+    <!-- Skill bar animation (moved from your previous HTML) -->
     <script>
-        // Add this JavaScript for the animated skills
         function animateSkillBars() {
             const skillLevels = document.querySelectorAll('.skill-level');
-            
+
             skillLevels.forEach(levelBar => {
-                const targetLevel = levelBar.getAttribute('data-level');
+                const targetLevel = parseInt(levelBar.getAttribute('data-level'), 10);
                 let currentWidth = 0;
-                const increment = targetLevel / 50; // Adjust speed here
-                
+                const increment = targetLevel / 50;
+
                 const timer = setInterval(() => {
                     currentWidth += increment;
                     if (currentWidth >= targetLevel) {
@@ -379,28 +436,24 @@
                         clearInterval(timer);
                     }
                     levelBar.style.width = currentWidth + '%';
-                    levelBar.textContent = currentWidth.toFixed(0) + '%';
                 }, 30);
             });
         }
 
-        // Start animation when skills section comes into view
-        function handleScroll() {
+        function handleSkillScroll() {
             const skillsSection = document.getElementById('skills');
             const sectionPosition = skillsSection.getBoundingClientRect().top;
             const screenPosition = window.innerHeight / 1.3;
 
             if (sectionPosition < screenPosition) {
                 animateSkillBars();
-                window.removeEventListener('scroll', handleScroll);
+                window.removeEventListener('scroll', handleSkillScroll);
             }
         }
 
-        // Initialize on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            window.addEventListener('scroll', handleScroll);
-            // Also trigger on load if section is already visible
-            handleScroll();
+        document.addEventListener('DOMContentLoaded', function () {
+            window.addEventListener('scroll', handleSkillScroll);
+            handleSkillScroll();
         });
     </script>
 </body>
