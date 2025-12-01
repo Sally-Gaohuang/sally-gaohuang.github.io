@@ -8,9 +8,10 @@
 
     --text-dark: #0f172a;
     --text-light: #334155;
-    --text-lighter: #94a3b8;
+    --text-muted: #64748b;
 
     --bg-light: #f5f7fc;
+    --bg-dark: #1e293b;
     --bg-white: #ffffff;
 
     --radius: 0.5rem;
@@ -24,9 +25,12 @@
 
 /* RESET */
 * { margin: 0; padding: 0; box-sizing: border-box; }
+
 html {
     scroll-behavior: smooth;
-    font-size: 80%;   /* 全站字体放大 1 倍 */ }
+    font-size: 90%;
+}
+
 body {
     display: flex;
     background: var(--bg-light);
@@ -38,41 +42,41 @@ body {
 /* =========================================
    SIDEBAR
 ========================================= */
-
 .sidebar {
-    width: 350px;
-    min-width: 350x;
+    width: 320px;
+    min-width: 320px;
     height: 100vh;
-    background: #1e293b;   /* 深灰色 */
+    background: #1e293b;
     color: white;
     padding: 3rem 2rem;
     position: fixed;
+    left: 0;
+    top: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.sidebar-header {
-    margin-top: 1rem;
-}
-
 .sidebar-logo {
-    font-size: 4.2rem;
-    font-weight: 700;
+    font-size: 4.7rem;
+    font-weight: 800;
     letter-spacing: 2px;
-    background: linear-gradient(135deg, #6b7bff, #8f6cff);
+    background: linear-gradient(135deg, #a3a5ae, #8f6cff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-style: italic !important;
+    font-style: italic;         /* ← 斜体 */
+    text-align: center;         /* ← 剧中 */
+    width: 100%;                /* ← 确保可以居中 */
 }
+
 
 .sidebar-tagline {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #cbd5e1;
-    font-weight: 350;
+    font-weight: 800;
+    text-align: center;    /* ← 剧中 */
 }
 
-/* SIDEBAR MENU — PILL STYLE  */
 .sidebar-menu {
     list-style: none;
     margin-top: 4rem;
@@ -81,35 +85,44 @@ body {
 .sidebar-menu li { margin-bottom: 1rem; }
 
 .sidebar-menu a {
-    display: block;
+    display: flex;
+    justify-content: flex-start;   /* 文字靠左 */
+    align-items: center;           /* 上下居中 */
+
+    width: 85%;                    /* 按钮整体居中 */
+    margin: 0 auto;                /* 按钮水平置中 */
+
     font-size: 1.2rem;
     font-weight: 500;
     color: #E2E8F0;
+
     padding: 10px 18px;
     border-radius: 25px;
     text-decoration: none;
     background: rgba(255,255,255,0.05);
+
     transition: all 0.25s ease;
 }
 
-.sidebar-menu a:hover {
-    background: linear-gradient(135deg, #6b7bff, #8f6cff);
-    color: white;
-    transform: translateX(8px);
-    box-shadow: 0 4px 12px rgba(107,123,255,0.35);
-}
 
+
+.sidebar-menu a:hover,
 .sidebar-menu a.active {
-    background: linear-gradient(135deg, #6b7bff, #8f6cff);
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: white;
-    font-weight: 600;
-    transform: translateX(8px);
     box-shadow: 0 4px 12px rgba(107,123,255,0.35);
+    transform: translateX(8px);
 }
 
-/* LANGUAGE BUTTON */
 .lang-btn {
-    background: linear-gradient(135deg, #6b7bff, #8f6cff);
+    display: flex;
+    justify-content: center;   /* 文字靠左 */
+    align-items: center;           /* 上下居中 */
+
+    width: 45%;                    /* 与菜单按钮保持一致 */
+    margin: 0 auto;                /* 整体居中 */
+
+    background: linear-gradient(135deg, #a8a8ac, #8f6cff);
     color: white;
     padding: 10px 20px;
     font-size: 1rem;
@@ -124,19 +137,26 @@ body {
 .lang-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 18px rgba(107,123,255,0.45);
-    filter: brightness(1.1);
 }
 
 /* =========================================
    MAIN CONTENT
 ========================================= */
 .main-content {
-    margin-left: 500px;
+    margin-left: 320px;
     padding: 3rem 4rem;
-    width: calc(100% - 500px);
-    max-width: 1200px;
+    width: calc(100% - 320px);
+    max-width: 1400px;
 }
 
+.gradient-text {
+    background: linear-gradient(135deg, #6f6e74, #7655d8);
+    -webkit-background-clip: text;
+    font-style: italic;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    font-size: 2rem;
+}
 
 /* =========================================
    HERO SECTION
@@ -145,18 +165,16 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 5rem;
+    gap: 4rem;
     padding: 4rem 0;
-    min-height: 80vh;
 }
 
-.hero-content { max-width: 500px; }
+.hero-content { max-width: 560px; }
 
 .hero-content h1 {
     font-size: 3.2rem;
-    line-height: 1.2;
+    line-height: 1.25;
     font-weight: 800;
-    margin-bottom: 1rem;
 }
 
 .gradient-text {
@@ -166,30 +184,25 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
-    color: var(--text-light);
+    font-size: 1.4rem;
+    color: var(--text-muted);
     margin-bottom: 1.2rem;
 }
 
 .hero-description {
     font-size: 1.1rem;
-    color: var(--text-light);
+    color: var(--text-muted);
     margin-bottom: 2rem;
 }
 
-
-.hero-buttons {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
+/* Buttons */
 .btn {
     padding: 0.8rem 1.8rem;
     border-radius: var(--radius-lg);
     text-decoration: none;
     font-weight: 600;
     transition: 0.3s;
+    font-size: 1rem;
 }
 
 .primary-btn {
@@ -213,7 +226,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* HERO ICONS */
+/* ICON Circles */
 .hero-icons {
     display: flex;
     gap: 1rem;
@@ -223,7 +236,7 @@ body {
 .hero-icons a {
     width: 45px;
     height: 45px;
-    background: var(--bg-white);
+    background: white;
     color: var(--text-dark);
     border-radius: 50%;
     display: flex;
@@ -238,14 +251,13 @@ body {
     color: var(--primary);
 }
 
-/* HERO IMAGE */
 .hero-image-container {
     width: 360px;
     height: 360px;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: var(--shadow-xl);
     border: 8px solid white;
+    box-shadow: var(--shadow-xl);
 }
 
 .hero-image {
@@ -386,20 +398,21 @@ body {
 /* =========================================
    RESPONSIVE
 ========================================= */
-@media (max-width: 1024px) {
-    .hero-section {
-        flex-direction: column;
-        text-align: center;
-    }
+@media (max-width: 1399px) {
+    .sidebar { width: 260px; }
+    .main-content { margin-left: 260px; }
 }
 
-@media (max-width: 900px) {
-    .sidebar {
-        width: 350px;
-        min-width: 350px;
-    }
+@media (max-width: 1099px) {
+    .sidebar { width: 240px; }
     .main-content {
-        margin-left: 350px;
+        margin-left: 240px;
+        padding: 2.5rem;
+    }
+    .hero-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2.5rem;
     }
 }
 
@@ -407,6 +420,7 @@ body {
     .sidebar {
         transform: translateX(-100%);
         transition: 0.3s;
+        width: 260px;
     }
     .sidebar.active {
         transform: translateX(0);
@@ -414,14 +428,191 @@ body {
     .main-content {
         margin-left: 0;
         width: 100%;
+        padding: 1.5rem;
     }
     .hero-section {
         flex-direction: column;
-        gap: 2rem;
         text-align: center;
+    }
+    .hero-image-container {
+        width: 260px;
+        height: 260px;
+        margin: auto;
     }
     .contact-wrapper {
         grid-template-columns: 1fr;
+    }
+}
+
+/* ===== iPad / Tablet Layout (max-width: 900px) ===== */
+@media (max-width: 900px) {
+
+    /* Sidebar 瘦一点，看起来不会覆盖太多 */
+    .sidebar {
+        width: 220px;
+        min-width: 220px;
+        padding: 2.5rem 1.5rem;
+    }
+    /* ===== Sidebar Header Center Alignment ===== */
+    .sidebar-header {
+        text-align: center;
+    }
+
+    /* 主内容区域自动扩展 */
+    .main-content {
+        margin-left: 220px;
+        width: calc(100% - 220px);
+        padding: 2.5rem 2rem;
+    }
+
+    /* Hero 区块：图片变小，不挤压文字 */
+    .hero-section {
+        gap: 2.5rem;
+    }
+    .hero-image-container {
+        width: 280px;
+        height: 280px;
+    }
+    .hero-content {
+        max-width: 100%;
+    }
+
+    /* Sidebar 菜单字体微调 */
+    .sidebar-menu a {
+        font-size: 1.05rem;
+        padding: 10px 16px;
+        text-align: center;   /* ← 导航文字置中 */
+    }
+
+    /* About / Section Padding 调整 */
+    .section {
+        padding: 3rem 0;
+    }
+}
+/* ============================================================
+   UNIVERSAL RESPONSIVE BREAKPOINTS
+   Cover: Desktop, Laptop, iPad, Surface, Fold, Mobile
+============================================================ */
+
+/* ========== 1. 超大屏幕（≥1800px） ========== */
+@media (min-width: 1800px) {
+    .main-content {
+        max-width: 1600px;
+        padding: 4rem 6rem;
+    }
+}
+
+/* ========== 2. 大桌机 / Laptop（1400px – 1799px） ========== */
+/* 你现有的 Layout 已经很好，这里保持不动 */
+
+
+/* ========== 3. 小桌机 / 大平板横向（1100px – 1399px） ========== */
+@media (max-width: 1399px) {
+    .sidebar {
+        width: 260px;
+        min-width: 260px;
+    }
+    .main-content {
+        margin-left: 260px;
+        width: calc(100% - 260px);
+        padding: 3rem 3rem;
+    }
+    .hero-image-container {
+        width: 320px;
+        height: 320px;
+    }
+}
+
+/* ========== 4. iPad Pro / Air / Mini（900px – 1099px） ========== */
+@media (max-width: 1099px) {
+    .sidebar {
+        width: 240px;
+        min-width: 240px;
+    }
+    .main-content {
+        margin-left: 240px;
+        width: calc(100% - 240px);
+        padding: 2.5rem 2rem;
+    }
+    .hero-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2.5rem;
+        min-height: auto;
+    }
+    .hero-image-container {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/* ========== 5. iPad Air / Mini 竖向（768px – 899px） ========== */
+@media (max-width: 900px) {
+    .sidebar {
+        width: 220px;
+        min-width: 220px;
+        padding: 2.5rem 1.5rem;
+    }
+    .main-content {
+        margin-left: 220px;
+        width: calc(100% - 220px);
+        padding: 2.5rem 2rem;
+    }
+    .hero-section {
+        gap: 2rem;
+    }
+    .hero-image-container {
+        width: 260px;
+        height: 260px;
+    }
+    .sidebar-menu a {
+        font-size: 1.05rem;
+    }
+}
+
+/* ========== 6. 手机 / 小平板（≤768px） ========== */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 260px;
+        min-width: 260px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 999;
+    }
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 1.75rem 1.25rem 3rem;
+    }
+
+    .hero-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .hero-image-container {
+        width: 230px;
+        height: 230px;
+    }
+}
+
+/* ========== 7. 小屏手机（≤480px） ========== */
+@media (max-width: 480px) {
+    .hero-image-container {
+        width: 190px;
+        height: 190px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .btn {
+        padding: 0.6rem 1.2rem;
     }
 }
 
@@ -447,24 +638,9 @@ body {
     padding: 20px;
     border-radius: 16px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    animation: fadeIn 0.3s ease;
 }
 
 .qr-modal-content img {
     width: 220px;
-    height: auto;
     border-radius: 12px;
-}
-
-/* Fade-in animation */
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.85); }
-    to { opacity: 1; transform: scale(1); }
-}
-/* =========================================
-   CUSTOM TEXT HIGHLIGHT
-========================================= */
-.highlight-text {
-    color: #1e293b;      /* deep grey */
-    font-weight: 600;
 }
