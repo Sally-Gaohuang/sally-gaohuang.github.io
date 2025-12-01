@@ -644,3 +644,24 @@ body {
     width: 220px;
     border-radius: 12px;
 }
+
+/* =========================================
+   SUCCESS MESSAGE (after contact submit)
+========================================= */
+.success-message {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #4f46e5;
+}
+
+.success-img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.hidden {
+    display: none;
+}

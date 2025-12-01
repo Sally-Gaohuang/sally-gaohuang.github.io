@@ -253,6 +253,17 @@ function applyLanguage(lang) {
 
     document.querySelector(".contact-submit-btn").textContent = t.sendMessage;
 }
+    document.querySelector(".contact-form").addEventListener("submit", function(e) {
+        e.preventDefault(); // stop page reload
+
+        const form = e.target;
+
+        // hide the form
+        form.classList.add("hidden");
+
+        // show emoji success message
+        document.getElementById("successMessage").classList.remove("hidden");
+    });
 
 
 /* ============================================================
