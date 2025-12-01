@@ -125,13 +125,15 @@ const langData = {
         navSkills: "Skills",
         navContact: "Contact",
 
-        homeSubtitle: "Web Developer • UI/UX Designer • Problem Solver",
+        homeSubtitle: "Web Developer • UI/UX Designer • Customized Problem Solver",
         homeBtn1: "Contact Me",
         homeBtn2: "About Me",
 
         aboutTitle: "About Me",
         aboutText1: "I'm a passionate web developer who transforms ideas into clean, modern and functional digital experiences.",
         aboutText2: "I specialize in frontend development, UI/UX design, and creating fast, responsive web applications.",
+        aboutText3: "I believe that a well-designed website is more than just aesthetics; it's about delivering value, enhancing brand presence, and creating meaningful user experiences.",
+        aboutText4: "With thoughtful design and reliable systems, a website can do more than look good — it can elevate your business, strengthen your brand, and create real impact.",
 
         yearsExp: "Years Experience",
         projectsDone: "Projects Delivered",
@@ -146,7 +148,8 @@ const langData = {
         sendMessage: "Send Message",
         yourName: "Your Name",
         yourEmail: "Your Email",
-        yourMessage: "Your Message"
+        yourMessage: "Your Message",
+        yourLocation: "Your Location",
     },
 
     zh: {
@@ -157,13 +160,15 @@ const langData = {
         navSkills: "技能",
         navContact: "联系",
 
-        homeSubtitle: "网页开发者 • UI/UX 设计师 • 问题解决者",
+        homeSubtitle: "网页设计 • UI/UX 设计师 • 私人定制",
         homeBtn1: "联系我",
         homeBtn2: "关于我",
 
         aboutTitle: "关于我",
-        aboutText1: "我是一名充满热情的网页开发者，将想法转化为现代、干净、实用的数字体验。",
-        aboutText2: "我专注于前端开发、UI/UX 设计，以及构建快速响应的网络应用程序。",
+        aboutText1: "科技正在重新定义我们的生活与工作方式。",
+        aboutText2: "一个好的网页不仅好看，更能助您提升业务、强化品牌、创造真实影响力。",
+        aboutText3: "我专注于以现代化的网页开发与简洁有力的 UI/UX 设计，帮助个人与企业释放数字化的潜能。",
+        aboutText4: "一个出色的网站可以替你说故事、支撑你的事业，并帮助你的业务稳步成长。因此，我热爱打造简洁、直观、真正有意义的数字体验。",
 
         yearsExp: "年经验",
         projectsDone: "完成项目",
@@ -178,7 +183,8 @@ const langData = {
         sendMessage: "发送消息",
         yourName: "您的姓名",
         yourEmail: "您的邮箱",
-        yourMessage: "您的留言"
+        yourMessage: "您的留言",
+        yourLocation: "您的位置"
     }
 };
 
