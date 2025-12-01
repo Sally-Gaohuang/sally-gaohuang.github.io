@@ -1,5 +1,5 @@
 /* ============================================================
-   1. INITIALIZATION
+   INITIALIZATION
 ============================================================ */
 document.addEventListener("DOMContentLoaded", () => {
     initSmoothScroll();
@@ -7,11 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
     initSidebarToggle();
     initLanguageToggle();
     initScrollAnimations();
+    initQrModal();
 });
 
 
 /* ============================================================
-   2. SMOOTH SCROLLING
+   SMOOTH SCROLLING
 ============================================================ */
 function initSmoothScroll() {
     const links = document.querySelectorAll('.sidebar-menu a');
@@ -31,7 +32,6 @@ function initSmoothScroll() {
                 });
             }
 
-            // update active highlight
             setActiveNav(targetID);
         });
     });
@@ -39,7 +39,7 @@ function initSmoothScroll() {
 
 
 /* ============================================================
-   3. ACTIVE NAVIGATION HIGHLIGHT
+   ACTIVE NAVIGATION
 ============================================================ */
 function initActiveNav() {
     const sections = document.querySelectorAll("section[id]");
@@ -49,22 +49,18 @@ function initActiveNav() {
         let current = "";
 
         sections.forEach(section => {
-            const top = window.scrollY;
-            if (top >= section.offsetTop - 200) {
+            if (window.scrollY >= section.offsetTop - 200) {
                 current = "#" + section.getAttribute("id");
             }
         });
 
         navLinks.forEach(link => {
-            link.classList.remove("active");
-            if (link.getAttribute("href") === current) {
-                link.classList.add("active");
-            }
+            link.classList.toggle("active", link.getAttribute("href") === current);
         });
     }
 
     window.addEventListener("scroll", updateActive);
-    updateActive(); // initial
+    updateActive();
 }
 
 function setActiveNav(href) {
@@ -76,18 +72,16 @@ function setActiveNav(href) {
 
 
 /* ============================================================
-   4. MOBILE SIDEBAR TOGGLE (auto-hide on scroll)
+   MOBILE SIDEBAR AUTO-HIDE
 ============================================================ */
 function initSidebarToggle() {
     const sidebar = document.querySelector(".sidebar");
 
-    // auto-hide on scroll (mobile)
     let lastScroll = window.scrollY;
     window.addEventListener("scroll", () => {
         if (window.innerWidth > 768) return;
 
-        let current = window.scrollY;
-
+        const current = window.scrollY;
         if (current > lastScroll) {
             sidebar.classList.remove("active");
         }
@@ -97,7 +91,7 @@ function initSidebarToggle() {
 
 
 /* ============================================================
-   5. FADE-IN ANIMATIONS
+   SCROLL ANIMATIONS
 ============================================================ */
 function initScrollAnimations() {
     const animated = document.querySelectorAll(".fade-in-up");
@@ -106,8 +100,7 @@ function initScrollAnimations() {
         const windowHeight = window.innerHeight;
 
         animated.forEach(el => {
-            const position = el.getBoundingClientRect().top;
-            if (position < windowHeight - 120) {
+            if (el.getBoundingClientRect().top < windowHeight - 120) {
                 el.classList.add("visible");
             }
         });
@@ -119,7 +112,7 @@ function initScrollAnimations() {
 
 
 /* ============================================================
-   6. LANGUAGE TOGGLE
+   LANGUAGE TOGGLE
 ============================================================ */
 let currentLanguage = localStorage.getItem("language") || "en";
 
@@ -149,7 +142,6 @@ const langData = {
         skillsTitle: "Skills",
         contactTitle: "Contact",
 
-        letsConnect: "Let's Connect",
         contactText: "I'm always open to new opportunities and creative projects.",
         sendMessage: "Send Message",
         yourName: "Your Name",
@@ -182,7 +174,6 @@ const langData = {
         skillsTitle: "技能",
         contactTitle: "联系我",
 
-        letsConnect: "欢迎联系",
         contactText: "我一直乐于讨论新的机会和创意项目。",
         sendMessage: "发送消息",
         yourName: "您的姓名",
@@ -190,7 +181,6 @@ const langData = {
         yourMessage: "您的留言"
     }
 };
-
 
 function initLanguageToggle() {
     const btn = document.getElementById("languageBtn");
@@ -205,13 +195,12 @@ function initLanguageToggle() {
     });
 }
 
-
-/* APPLY TRANSLATION */
 function applyLanguage(lang) {
     const t = langData[lang];
 
-    // update button text
-    document.getElementById("languageBtn").textContent = (lang === "en" ? "中文" : "EN");
+    // button
+    document.getElementById("languageBtn").textContent =
+        lang === "en" ? "中文" : "EN";
 
     // NAVIGATION
     const nav = document.querySelectorAll(".sidebar-menu a");
@@ -224,15 +213,12 @@ function applyLanguage(lang) {
         nav[5].textContent = t.navContact;
     }
 
-    // HERO SECTION
-    const subtitle = document.querySelector(".hero-subtitle");
-    if (subtitle) subtitle.textContent = t.homeSubtitle;
+    // HERO
+    document.querySelector(".hero-subtitle").textContent = t.homeSubtitle;
 
     const btns = document.querySelectorAll(".hero-buttons .btn");
-    if (btns.length >= 2) {
-        btns[0].textContent = t.homeBtn1;
-        btns[1].textContent = t.homeBtn2;
-    }
+    btns[0].textContent = t.homeBtn1;
+    btns[1].textContent = t.homeBtn2;
 
     // ABOUT
     document.querySelectorAll(".about-paragraph")[0].textContent = t.aboutText1;
@@ -246,23 +232,74 @@ function applyLanguage(lang) {
     document.querySelector("#contact .section-title").textContent = t.contactTitle;
 
     // CONTACT
-    const contactInfo = document.querySelector("#contact .contact-info p");
-    if (contactInfo) contactInfo.textContent = t.contactText;
+    const info = document.querySelector("#contact .contact-info p");
+    if (info) info.textContent = t.contactText;
 
-    const formLabels = document.querySelectorAll(".contact-form label");
-    if (formLabels.length >= 3) {
-        formLabels[0].textContent = t.yourName;
-        formLabels[1].textContent = t.yourEmail;
-        formLabels[2].textContent = t.yourMessage;
+    const labels = document.querySelectorAll(".contact-form label");
+    labels[0].textContent = t.yourName;
+    labels[1].textContent = t.yourEmail;
+    labels[2].textContent = t.yourMessage;
+
+    const inputs = document.querySelectorAll(".contact-form input, .contact-form textarea");
+    inputs[0].placeholder = t.yourName;
+    inputs[1].placeholder = t.yourEmail;
+    inputs[2].placeholder = t.yourMessage;
+
+    document.querySelector(".contact-submit-btn").textContent = t.sendMessage;
+}
+
+
+/* ============================================================
+   QR MODAL
+============================================================ */
+function initQrModal() {
+    const qrModal = document.getElementById("qrModal");
+    const showQr = document.getElementById("showQr");
+
+    if (!qrModal || !showQr) return;
+
+    showQr.addEventListener("click", (e) => {
+        e.preventDefault();
+        qrModal.style.display = "flex";
+    });
+
+    qrModal.addEventListener("click", (e) => {
+        if (e.target === qrModal) qrModal.style.display = "none";
+    });
+}
+function initQrModal() {
+    const qrModal = document.getElementById("qrModal");
+    const waModal = document.getElementById("waModal");
+
+    const showQr = document.getElementById("showQr");
+    const showWhatsapp = document.getElementById("showWhatsapp");
+
+    // WeChat QR
+    if (showQr) {
+        showQr.addEventListener("click", e => {
+            e.preventDefault();
+            qrModal.style.display = "flex";
+        });
     }
 
-    const formInputs = document.querySelectorAll(".contact-form input, .contact-form textarea");
-    if (formInputs.length >= 3) {
-        formInputs[0].placeholder = t.yourName;
-        formInputs[1].placeholder = t.yourEmail;
-        formInputs[2].placeholder = t.yourMessage;
+    // WhatsApp QR
+    if (showWhatsapp) {
+        showWhatsapp.addEventListener("click", e => {
+            e.preventDefault();
+            waModal.style.display = "flex";
+        });
     }
 
-    const submitBtn = document.querySelector(".contact-submit-btn");
-    if (submitBtn) submitBtn.textContent = t.sendMessage;
+    // Close on outside click
+    if (qrModal) {
+        qrModal.addEventListener("click", e => {
+            if (e.target === qrModal) qrModal.style.display = "none";
+        });
+    }
+
+    if (waModal) {
+        waModal.addEventListener("click", e => {
+            if (e.target === waModal) waModal.style.display = "none";
+        });
+    }
 }

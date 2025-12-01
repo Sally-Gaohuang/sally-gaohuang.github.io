@@ -146,32 +146,57 @@
     <main class="main-content">
 
         <!-- HERO / HOME SECTION -->
-        <section id="home" class="hero-section">
-            <div class="hero-content">
-                <h1>Hello, I'm <span class="gradient-text">Lin Zhi</span></h1>
-                <p class="hero-subtitle">Web Developer • UI/UX Designer • Problem Solver</p>
-                <p class="hero-description">
-                    I build modern, fast, elegant websites and web applications.
-                    My focus is clean code, beautiful UI, and real business results.
-                </p>
+<section id="home" class="hero-section">
+    <div class="hero-content">
+        <h1>Hello, I'm <span class="gradient-text">Lin Zhi</span></h1>
+        <p class="hero-subtitle">Web Developer • UI/UX Designer • Problem Solver</p>
+        <p class="hero-description">
+            I build modern, fast, elegant websites and web applications.
+            My focus is clean code, beautiful UI, and real business results.
+        </p>
 
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn primary-btn">Contact Me</a>
-                    <a href="#about" class="btn secondary-btn">About Me</a>
-                </div>
+        <div class="hero-buttons">
+            <a href="#contact" class="btn primary-btn">Contact Me</a>
+            <a href="#about" class="btn secondary-btn">About Me</a>
+        </div>
 
-                <div class="hero-icons">
-                    <a href="https://github.com/Sally-Gaohuang" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/%E6%B1%89%E5%AD%97%E5%AD%A6%E9%97%AE-possible-hanzi-a1a44212b" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:linzhiatwork@gmail.com"><i class="fas fa-envelope"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
-                </div>
+        <div class="hero-icons">
+            <a href="https://github.com/Sally-Gaohuang" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/%E6%B1%89%E5%AD%97%E5%AD%A6%E9%97%AE-possible-hanzi-a1a44212b" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:linzhiatwork@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+            <!-- WeChat QR -->
+            <a href="#" id="showQr" class="social-link"><i class="fas fa-qrcode"></i></a>
+             <!-- WhatsApp QR -->
+            <a href="#" id="showWhatsapp" class="social-link"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div id="qrModal" class="qr-modal">
+            <div class="qr-modal-content">
+                <img src="images/wechat.jpeg" alt="WeChat QR Code">
             </div>
-
-            <div class="hero-image-container">
-                <img src="images/my.PNG" alt="Lin Zhi" class="hero-image">
+        </div>
+        <div id="waModal" class="qr-modal">
+            <div class="qr-modal-content">
+                <img src="images/whatsapp.jpeg" alt="WhatsApp QR Code">
             </div>
-        </section>
+        </div>
+
+        <!-- CLOSE HERO CONTENT HERE -->
+    </div>
+
+    <!-- QR Modal (separate, outside hero-content) -->
+    <div id="qrModal" class="qr-modal">
+        <div class="qr-modal-content">
+            <img src="images/wechat_qr.jpeg" alt="WeChat QR Code">
+        </div>
+    </div>
+
+    <!-- HERO IMAGE -->
+    <div class="hero-image-container">
+        <img src="images/my.PNG" alt="Lin Zhi" class="hero-image">
+    </div>
+</section>
+
 
         <!-- ABOUT SECTION -->
         <section id="about" class="section">
