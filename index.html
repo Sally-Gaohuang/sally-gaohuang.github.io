@@ -119,7 +119,6 @@
     </style>
 </head>
 <body>
-
     <!-- SIDEBAR -->
     <aside class="sidebar">
         <div class="sidebar-header">
@@ -410,23 +409,32 @@
                 </div>
 
                 <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input id="name" name="name" type="text" placeholder="Your Name" required>
+
+                    <div class="contact-fields">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input id="name" name="name" type="text" placeholder="Your Name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input id="email" name="email" type="email" placeholder="Your Email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn primary-btn contact-submit-btn">Send Message</button>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Your Email</label>
-                        <input id="email" name="email" type="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn primary-btn contact-submit-btn">Send Message</button>
+
+                    <!-- SUCCESS MESSAGE (outside contact-fields, but inside form) -->
                     <div id="successMessage" class="success-message hidden">
                         <img src="images/4.png" alt="Success!" class="success-img">
                         <p>🎉 Message submitted!</p>
                     </div>
+
                 </form>
             </div>
         </section>
@@ -436,8 +444,14 @@
             <p>&copy; 2024 Lin Zhi. All rights reserved.</p>
             <p>Built with passion and modern web technologies.</p>
         </footer>
-
     </main>
+    <script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
+    <script>
+        emailjs.init("DbHd-b86V3Sga-r8G");
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="script.js"></script>
+
 
     <!-- Your script file with language toggle, scroll, etc. -->
     <script src="script.js"></script>

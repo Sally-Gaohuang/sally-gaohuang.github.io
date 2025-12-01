@@ -6,8 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
     initActiveNav();
     initSidebarToggle();
     initLanguageToggle();
-    initScrollAnimations();
+    initScrollReveal();
     initQrModal();
+    initContactForm();
+    initButtonRipple();
+    animateHeroImage();
 });
 
 
@@ -70,9 +73,51 @@ function setActiveNav(href) {
     });
 }
 
+document.querySelector(".contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+
+    emailjs.send("service_pzeguqq", "template_d3okh3r", {
+        name: form.name.value,
+        email: form.email.value,
+        message: form.message.value
+    }).then(() => {
+
+        document.querySelector(".contact-fields").classList.add("hidden");
+        document.getElementById("successMessage").classList.remove("hidden");
+
+    }).catch((error) => {
+        alert("❌ Failed to send message: " + JSON.stringify(error));
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const contactForm = document.querySelector(".contact-form");
+    const successMessage = document.getElementById("successMessage");
+
+    contactForm.addEventListener("submit", function(e) {
+        e.preventDefault(); // stop real submission
+
+        // Hide the form
+        contactForm.querySelector(".contact-fields").style.display = "none";
+
+        // Show success block
+        successMessage.classList.remove("hidden");
+
+        // Add success animation
+        successMessage.style.opacity = "0";
+        successMessage.style.transform = "translateY(20px)";
+        setTimeout(() => {
+            successMessage.style.transition = "all 0.6s ease";
+            successMessage.style.opacity = "1";
+            successMessage.style.transform = "translateY(0)";
+        }, 50);
+    });
+});
 
 /* ============================================================
-   MOBILE SIDEBAR AUTO-HIDE
+   SIDEBAR TOGGLE (MOBILE)
 ============================================================ */
 function initSidebarToggle() {
     const sidebar = document.querySelector(".sidebar");
@@ -80,34 +125,72 @@ function initSidebarToggle() {
     let lastScroll = window.scrollY;
     window.addEventListener("scroll", () => {
         if (window.innerWidth > 768) return;
-
         const current = window.scrollY;
-        if (current > lastScroll) {
-            sidebar.classList.remove("active");
-        }
+
+        if (current > lastScroll) sidebar.classList.remove("active");
         lastScroll = current;
     });
 }
 
 
 /* ============================================================
-   SCROLL ANIMATIONS
+   SCROLL REVEAL (FADE-IN + SLIDE-UP)
 ============================================================ */
-function initScrollAnimations() {
-    const animated = document.querySelectorAll(".fade-in-up");
+function initScrollReveal() {
+    const revealElements = document.querySelectorAll(
+        ".fade-in-up, .section, .stat-card, .experience-card, .skills-category"
+    );
 
-    function checkFade() {
-        const windowHeight = window.innerHeight;
-
-        animated.forEach(el => {
-            if (el.getBoundingClientRect().top < windowHeight - 120) {
+    const revealOnScroll = () => {
+        revealElements.forEach(el => {
+            if (el.getBoundingClientRect().top < window.innerHeight - 100) {
                 el.classList.add("visible");
             }
         });
-    }
+    };
 
-    window.addEventListener("scroll", checkFade);
-    checkFade();
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+}
+
+
+/* ============================================================
+   HERO IMAGE FLOAT ANIMATION
+============================================================ */
+function animateHeroImage() {
+    const img = document.querySelector(".hero-image-container");
+    if (!img) return;
+
+    img.style.transition = "transform 3s ease-in-out";
+    let direction = 1;
+
+    setInterval(() => {
+        img.style.transform = `translateY(${direction * 10}px)`;
+        direction *= -1;
+    }, 3000);
+}
+
+
+/* ============================================================
+   BUTTON RIPPLE EFFECT
+============================================================ */
+function initButtonRipple() {
+    document.querySelectorAll(".btn").forEach(btn => {
+        btn.addEventListener("click", function (e) {
+            const ripple = document.createElement("span");
+            ripple.classList.add("ripple");
+
+            const x = e.clientX - e.target.getBoundingClientRect().left;
+            const y = e.clientY - e.target.getBoundingClientRect().top;
+
+            ripple.style.left = `${x}px`;
+            ripple.style.top = `${y}px`;
+
+            this.appendChild(ripple);
+
+            setTimeout(() => ripple.remove(), 600);
+        });
+    });
 }
 
 
@@ -129,27 +212,14 @@ const langData = {
         homeBtn1: "Contact Me",
         homeBtn2: "About Me",
 
-        aboutTitle: "About Me",
         aboutText1: "I'm a passionate web developer who transforms ideas into clean, modern and functional digital experiences.",
         aboutText2: "I specialize in frontend development, UI/UX design, and creating fast, responsive web applications.",
-        aboutText3: "I believe that a well-designed website is more than just aesthetics; it's about delivering value, enhancing brand presence, and creating meaningful user experiences.",
-        aboutText4: "With thoughtful design and reliable systems, a website can do more than look good — it can elevate your business, strengthen your brand, and create real impact.",
-
-        yearsExp: "Years Experience",
-        projectsDone: "Projects Delivered",
-        clientSatisfaction: "Client Satisfaction",
-
-        educationTitle: "Education",
-        experienceTitle: "Experience",
-        skillsTitle: "Skills",
-        contactTitle: "Contact",
 
         contactText: "I'm always open to new opportunities and creative projects.",
-        sendMessage: "Send Message",
         yourName: "Your Name",
         yourEmail: "Your Email",
         yourMessage: "Your Message",
-        yourLocation: "Your Location",
+        sendMessage: "Send Message"
     },
 
     zh: {
@@ -164,27 +234,14 @@ const langData = {
         homeBtn1: "联系我",
         homeBtn2: "关于我",
 
-        aboutTitle: "关于我",
         aboutText1: "科技正在重新定义我们的生活与工作方式。",
-        aboutText2: "一个好的网页不仅好看，更能助您提升业务、强化品牌、创造真实影响力。",
-        aboutText3: "我专注于以现代化的网页开发与简洁有力的 UI/UX 设计，帮助个人与企业释放数字化的潜能。",
-        aboutText4: "一个出色的网站可以替你说故事、支撑你的事业，并帮助你的业务稳步成长。因此，我热爱打造简洁、直观、真正有意义的数字体验。",
+        aboutText2: "优秀的网页不仅美观，更能助您提升业务和品牌影响力。",
 
-        yearsExp: "年经验",
-        projectsDone: "完成项目",
-        clientSatisfaction: "客户满意度",
-
-        educationTitle: "教育背景",
-        experienceTitle: "工作经历",
-        skillsTitle: "技能",
-        contactTitle: "联系我",
-
-        contactText: "我一直乐于讨论新的机会和创意项目。",
-        sendMessage: "发送消息",
+        contactText: "欢迎随时联系讨论新机会或创意项目！",
         yourName: "您的姓名",
         yourEmail: "您的邮箱",
         yourMessage: "您的留言",
-        yourLocation: "您的位置"
+        sendMessage: "发送消息"
     }
 };
 
@@ -204,104 +261,74 @@ function initLanguageToggle() {
 function applyLanguage(lang) {
     const t = langData[lang];
 
-    // button
-    document.getElementById("languageBtn").textContent =
-        lang === "en" ? "中文" : "EN";
+    const mapping = [
+        [".hero-subtitle", t.homeSubtitle],
+        [".contact-info p", t.contactText],
+        [".contact-submit-btn", t.sendMessage]
+    ];
 
-    // NAVIGATION
-    const nav = document.querySelectorAll(".sidebar-menu a");
-    if (nav.length >= 6) {
-        nav[0].textContent = t.navHome;
-        nav[1].textContent = t.navAbout;
-        nav[2].textContent = t.navEducation;
-        nav[3].textContent = t.navExperience;
-        nav[4].textContent = t.navSkills;
-        nav[5].textContent = t.navContact;
-    }
-
-    // HERO
-    document.querySelector(".hero-subtitle").textContent = t.homeSubtitle;
-
-    const btns = document.querySelectorAll(".hero-buttons .btn");
-    btns[0].textContent = t.homeBtn1;
-    btns[1].textContent = t.homeBtn2;
-
-    // ABOUT
-    document.querySelectorAll(".about-paragraph")[0].textContent = t.aboutText1;
-    document.querySelectorAll(".about-paragraph")[1].textContent = t.aboutText2;
-
-    // SECTION TITLES
-    document.querySelector("#about .section-title").textContent = t.aboutTitle;
-    document.querySelector("#education .section-title").textContent = t.educationTitle;
-    document.querySelector("#experience .section-title").textContent = t.experienceTitle;
-    document.querySelector("#skills .section-title").textContent = t.skillsTitle;
-    document.querySelector("#contact .section-title").textContent = t.contactTitle;
-
-    // CONTACT
-    const info = document.querySelector("#contact .contact-info p");
-    if (info) info.textContent = t.contactText;
+    mapping.forEach(([selector, value]) => {
+        const el = document.querySelector(selector);
+        if (el) el.textContent = value;
+    });
 
     const labels = document.querySelectorAll(".contact-form label");
-    labels[0].textContent = t.yourName;
-    labels[1].textContent = t.yourEmail;
-    labels[2].textContent = t.yourMessage;
-
-    const inputs = document.querySelectorAll(".contact-form input, .contact-form textarea");
-    inputs[0].placeholder = t.yourName;
-    inputs[1].placeholder = t.yourEmail;
-    inputs[2].placeholder = t.yourMessage;
-
-    document.querySelector(".contact-submit-btn").textContent = t.sendMessage;
+    if (labels.length >= 3) {
+        labels[0].textContent = t.yourName;
+        labels[1].textContent = t.yourEmail;
+        labels[2].textContent = t.yourMessage;
+    }
 }
-    document.querySelector(".contact-form").addEventListener("submit", function(e) {
-        e.preventDefault(); // stop page reload
-
-        const form = e.target;
-
-        // hide the form
-        form.classList.add("hidden");
-
-        // show emoji success message
-        document.getElementById("successMessage").classList.remove("hidden");
-    });
 
 
 /* ============================================================
-   QR MODAL
+   CONTACT FORM → SUCCESS EMOJI
+============================================================ */
+function initContactForm() {
+    const form = document.querySelector(".contact-form");
+    const successBox = document.getElementById("successMessage");
+    const fields = document.querySelector(".contact-fields");
+
+    if (!form) return;
+
+    form.addEventListener("submit", e => {
+        e.preventDefault();
+
+        fields.classList.add("hidden");
+        successBox.classList.remove("hidden");
+    });
+}
+
+
+/* ============================================================
+   QR MODALS (WeChat / WhatsApp)
 ============================================================ */
 function initQrModal() {
     const qrModal = document.getElementById("qrModal");
     const waModal = document.getElementById("waModal");
 
     const showQr = document.getElementById("showQr");
-    const showWhatsapp = document.getElementById("showWhatsapp");
+    const showWa = document.getElementById("showWhatsapp");
 
-    // WeChat QR
-    if (showQr) {
+    if (showQr)
         showQr.addEventListener("click", e => {
             e.preventDefault();
             qrModal.style.display = "flex";
         });
-    }
 
-    // WhatsApp QR
-    if (showWhatsapp) {
-        showWhatsapp.addEventListener("click", e => {
+    if (showWa)
+        showWa.addEventListener("click", e => {
             e.preventDefault();
             waModal.style.display = "flex";
         });
-    }
 
-    // Close on outside click
-    if (qrModal) {
+    if (qrModal)
         qrModal.addEventListener("click", e => {
             if (e.target === qrModal) qrModal.style.display = "none";
         });
-    }
 
-    if (waModal) {
+    if (waModal)
         waModal.addEventListener("click", e => {
             if (e.target === waModal) waModal.style.display = "none";
         });
-    }
 }
