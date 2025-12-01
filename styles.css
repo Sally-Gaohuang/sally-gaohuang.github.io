@@ -7,7 +7,7 @@
     --secondary: #8f6cff;
 
     --text-dark: #0f172a;
-    --text-light: #64748b;
+    --text-light: #334155;
     --text-lighter: #94a3b8;
 
     --bg-light: #f5f7fc;
@@ -24,7 +24,9 @@
 
 /* RESET */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+    font-size: 80%;   /* 全站字体放大 1 倍 */ }
 body {
     display: flex;
     background: var(--bg-light);
@@ -36,11 +38,12 @@ body {
 /* =========================================
    SIDEBAR
 ========================================= */
+
 .sidebar {
     width: 350px;
-    min-width: 350px;
+    min-width: 350x;
     height: 100vh;
-    background: var(--text-dark);
+    background: #1e293b;   /* 深灰色 */
     color: white;
     padding: 3rem 2rem;
     position: fixed;
@@ -55,17 +58,18 @@ body {
 
 .sidebar-logo {
     font-size: 4.2rem;
-    font-weight: 900;
+    font-weight: 700;
     letter-spacing: 2px;
     background: linear-gradient(135deg, #6b7bff, #8f6cff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-style: italic !important;
 }
 
 .sidebar-tagline {
     font-size: 1.1rem;
     color: #cbd5e1;
-    font-weight: 500;
+    font-weight: 350;
 }
 
 /* SIDEBAR MENU — PILL STYLE  */
@@ -127,11 +131,12 @@ body {
    MAIN CONTENT
 ========================================= */
 .main-content {
-    margin-left: 350px;
+    margin-left: 500px;
     padding: 3rem 4rem;
-    width: calc(100% - 350px);
+    width: calc(100% - 500px);
     max-width: 1200px;
 }
+
 
 /* =========================================
    HERO SECTION
@@ -171,6 +176,7 @@ body {
     color: var(--text-light);
     margin-bottom: 2rem;
 }
+
 
 .hero-buttons {
     display: flex;
@@ -389,11 +395,11 @@ body {
 
 @media (max-width: 900px) {
     .sidebar {
-        width: 260px;
-        min-width: 260px;
+        width: 350px;
+        min-width: 350px;
     }
     .main-content {
-        margin-left: 260px;
+        margin-left: 350px;
     }
 }
 
@@ -454,4 +460,11 @@ body {
 @keyframes fadeIn {
     from { opacity: 0; transform: scale(0.85); }
     to { opacity: 1; transform: scale(1); }
+}
+/* =========================================
+   CUSTOM TEXT HIGHLIGHT
+========================================= */
+.highlight-text {
+    color: #1e293b;      /* deep grey */
+    font-weight: 600;
 }

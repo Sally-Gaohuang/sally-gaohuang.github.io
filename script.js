@@ -260,21 +260,6 @@ function applyLanguage(lang) {
 ============================================================ */
 function initQrModal() {
     const qrModal = document.getElementById("qrModal");
-    const showQr = document.getElementById("showQr");
-
-    if (!qrModal || !showQr) return;
-
-    showQr.addEventListener("click", (e) => {
-        e.preventDefault();
-        qrModal.style.display = "flex";
-    });
-
-    qrModal.addEventListener("click", (e) => {
-        if (e.target === qrModal) qrModal.style.display = "none";
-    });
-}
-function initQrModal() {
-    const qrModal = document.getElementById("qrModal");
     const waModal = document.getElementById("waModal");
 
     const showQr = document.getElementById("showQr");
