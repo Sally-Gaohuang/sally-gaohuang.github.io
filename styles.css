@@ -64,17 +64,16 @@ body {
     background: linear-gradient(135deg, #a3a5ae, #8f6cff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-style: italic;         /* ← 斜体 */
-    text-align: center;         /* ← 剧中 */
-    width: 100%;                /* ← 确保可以居中 */
+    font-style: italic;
+    text-align: center;
+    width: 100%;
 }
-
 
 .sidebar-tagline {
     font-size: 1rem;
     color: #cbd5e1;
     font-weight: 800;
-    text-align: center;    /* ← 剧中 */
+    text-align: center;
 }
 
 .sidebar-menu {
@@ -86,25 +85,19 @@ body {
 
 .sidebar-menu a {
     display: flex;
-    justify-content: flex-start;   /* 文字靠左 */
-    align-items: center;           /* 上下居中 */
-
-    width: 85%;                    /* 按钮整体居中 */
-    margin: 0 auto;                /* 按钮水平置中 */
-
+    justify-content: flex-start;
+    align-items: center;
+    width: 85%;
+    margin: 0 auto;
     font-size: 1.2rem;
     font-weight: 500;
     color: #E2E8F0;
-
     padding: 10px 18px;
     border-radius: 25px;
     text-decoration: none;
     background: rgba(255,255,255,0.05);
-
     transition: all 0.25s ease;
 }
-
-
 
 .sidebar-menu a:hover,
 .sidebar-menu a.active {
@@ -116,12 +109,10 @@ body {
 
 .lang-btn {
     display: flex;
-    justify-content: center;   /* 文字靠左 */
-    align-items: center;           /* 上下居中 */
-
-    width: 45%;                    /* 与菜单按钮保持一致 */
-    margin: 0 auto;                /* 整体居中 */
-
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    margin: 0 auto;
     background: linear-gradient(135deg, #a8a8ac, #8f6cff);
     color: white;
     padding: 10px 20px;
@@ -152,8 +143,8 @@ body {
 .gradient-text {
     background: linear-gradient(135deg, #6f6e74, #7655d8);
     -webkit-background-clip: text;
+    text-fill-color: transparent;
     font-style: italic;
-    -webkit-text-fill-color: transparent;
     font-weight: 900;
     font-size: 2rem;
 }
@@ -373,30 +364,147 @@ body {
 
 .responsibilities li { margin-bottom: 0.6rem; }
 
-/* SKILLS */
-.skills-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
+/* ============================
+   SKILLS PROGRESS BAR — NEW
+============================ */
+.skill-bar {
+    width: 100%;
+    height: 14px;             /* ← 调粗就在这里调整，例如 12px → 14px → 18px */
+    background: #12f312;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 8px 0 20px;
 }
 
-/* CONTACT */
-.contact-wrapper {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 2.5rem;
-}
-
-/* FOOTER */
-.footer {
-    text-align: center;
-    margin-top: 3rem;
-    padding-top: 1rem;
-    color: var(--text-light);
+.skill-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #adf12f, #3af061);  /* 更漂亮的绿色渐变 */
+    border-radius: 10px;
+    transition: width 1.2s ease;
 }
 
 /* =========================================
-   RESPONSIVE
+   CONTACT — BEAUTIFIED FINAL VERSION
+========================================= */
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+/* Left Section */
+.contact-info h3 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+/* Right — FORM CARD
+/* ====================== FORM CARD (clean version) ====================== */
+.contact-form {
+    background: white;
+    padding: 2.2rem;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    border: 1px solid #e2e8f0;
+
+    /* Layout */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;     /* Center the SEND button */
+}
+
+/* Spacing between input fields */
+.contact-fields .form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Center SEND button */
+#sendBtn {
+    align-self: center;
+    margin-top: 10px;
+}
+
+
+/* Input + Textarea */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 1.05rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    background: #f8fafc;
+    transition: 0.25s ease-in-out;
+}
+
+/* Focus Effect */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary);
+    background: white;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(107, 123, 255, 0.25);
+}
+
+/* Labels */
+.contact-form label {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+    color: #475569;
+}
+
+/* Button */
+.contact-submit-btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    border-radius: 12px;
+    margin-top: 0.3rem;
+    transition: 0.25s ease;
+    background: var(--primary);
+    color: white;
+    border: none;
+}
+
+.contact-submit-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(107,123,255,0.25);
+}
+
+/* Success box */
+.success-message {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        padding: 1.8rem;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE BREAKPOINTS
 ========================================= */
 @media (max-width: 1399px) {
     .sidebar { width: 260px; }
@@ -422,197 +530,23 @@ body {
         transition: 0.3s;
         width: 260px;
     }
-    .sidebar.active {
-        transform: translateX(0);
-    }
+    .sidebar.active { transform: translateX(0); }
+
     .main-content {
         margin-left: 0;
         width: 100%;
         padding: 1.5rem;
     }
+
     .hero-section {
         flex-direction: column;
         text-align: center;
     }
+
     .hero-image-container {
         width: 260px;
         height: 260px;
         margin: auto;
-    }
-    .contact-wrapper {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ===== iPad / Tablet Layout (max-width: 900px) ===== */
-@media (max-width: 900px) {
-
-    /* Sidebar 瘦一点，看起来不会覆盖太多 */
-    .sidebar {
-        width: 220px;
-        min-width: 220px;
-        padding: 2.5rem 1.5rem;
-    }
-    /* ===== Sidebar Header Center Alignment ===== */
-    .sidebar-header {
-        text-align: center;
-    }
-
-    /* 主内容区域自动扩展 */
-    .main-content {
-        margin-left: 220px;
-        width: calc(100% - 220px);
-        padding: 2.5rem 2rem;
-    }
-
-    /* Hero 区块：图片变小，不挤压文字 */
-    .hero-section {
-        gap: 2.5rem;
-    }
-    .hero-image-container {
-        width: 280px;
-        height: 280px;
-    }
-    .hero-content {
-        max-width: 100%;
-    }
-
-    /* Sidebar 菜单字体微调 */
-    .sidebar-menu a {
-        font-size: 1.05rem;
-        padding: 10px 16px;
-        text-align: center;   /* ← 导航文字置中 */
-    }
-
-    /* About / Section Padding 调整 */
-    .section {
-        padding: 3rem 0;
-    }
-}
-/* ============================================================
-   UNIVERSAL RESPONSIVE BREAKPOINTS
-   Cover: Desktop, Laptop, iPad, Surface, Fold, Mobile
-============================================================ */
-
-/* ========== 1. 超大屏幕（≥1800px） ========== */
-@media (min-width: 1800px) {
-    .main-content {
-        max-width: 1600px;
-        padding: 4rem 6rem;
-    }
-}
-
-/* ========== 2. 大桌机 / Laptop（1400px – 1799px） ========== */
-/* 你现有的 Layout 已经很好，这里保持不动 */
-
-
-/* ========== 3. 小桌机 / 大平板横向（1100px – 1399px） ========== */
-@media (max-width: 1399px) {
-    .sidebar {
-        width: 260px;
-        min-width: 260px;
-    }
-    .main-content {
-        margin-left: 260px;
-        width: calc(100% - 260px);
-        padding: 3rem 3rem;
-    }
-    .hero-image-container {
-        width: 320px;
-        height: 320px;
-    }
-}
-
-/* ========== 4. iPad Pro / Air / Mini（900px – 1099px） ========== */
-@media (max-width: 1099px) {
-    .sidebar {
-        width: 240px;
-        min-width: 240px;
-    }
-    .main-content {
-        margin-left: 240px;
-        width: calc(100% - 240px);
-        padding: 2.5rem 2rem;
-    }
-    .hero-section {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 2.5rem;
-        min-height: auto;
-    }
-    .hero-image-container {
-        width: 300px;
-        height: 300px;
-    }
-}
-
-/* ========== 5. iPad Air / Mini 竖向（768px – 899px） ========== */
-@media (max-width: 900px) {
-    .sidebar {
-        width: 220px;
-        min-width: 220px;
-        padding: 2.5rem 1.5rem;
-    }
-    .main-content {
-        margin-left: 220px;
-        width: calc(100% - 220px);
-        padding: 2.5rem 2rem;
-    }
-    .hero-section {
-        gap: 2rem;
-    }
-    .hero-image-container {
-        width: 260px;
-        height: 260px;
-    }
-    .sidebar-menu a {
-        font-size: 1.05rem;
-    }
-}
-
-/* ========== 6. 手机 / 小平板（≤768px） ========== */
-@media (max-width: 768px) {
-    .sidebar {
-        width: 260px;
-        min-width: 260px;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-        z-index: 999;
-    }
-    .sidebar.active {
-        transform: translateX(0);
-    }
-
-    .main-content {
-        margin-left: 0;
-        width: 100%;
-        padding: 1.75rem 1.25rem 3rem;
-    }
-
-    .hero-section {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 1.5rem;
-    }
-
-    .hero-image-container {
-        width: 230px;
-        height: 230px;
-    }
-}
-
-/* ========== 7. 小屏手机（≤480px） ========== */
-@media (max-width: 480px) {
-    .hero-image-container {
-        width: 190px;
-        height: 190px;
-    }
-    h1 {
-        font-size: 2rem;
-    }
-    .btn {
-        padding: 0.6rem 1.2rem;
     }
 }
 
@@ -646,7 +580,7 @@ body {
 }
 
 /* =========================================
-   SUCCESS MESSAGE (after contact submit)
+   SUCCESS MESSAGE (after submit)
 ========================================= */
 .success-message {
     text-align: center;
@@ -662,6 +596,30 @@ body {
     margin-bottom: 1rem;
 }
 
-.hidden {
-    display: none;
+.hidden { display: none; }
+
+/* ================= FOOTER (FIXED CENTER) ================= */
+.footer {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;             /* center inside grey area */
+    
+    text-align: center;
+    padding: 40px 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer p {
+    margin: 5px 0;
+    opacity: 0.7;
+    font-size: 0.95rem;
+}
+
+/* override main-content push to left */
+.main-content .footer {
+    margin-left: 0 !important;
 }

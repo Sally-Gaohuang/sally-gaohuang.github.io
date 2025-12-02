@@ -4,494 +4,280 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lin Zhi - Portfolio</title>
+
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <!-- Skill bar styles (from your previous inline <style>) -->
-    <style>
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2rem;
-        }
-        .skills-category h3 {
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-        .skill-item {
-            margin-bottom: 1.5rem;
-        }
-        .skill-name-wrapper {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.4rem;
-            font-weight: 600;
-            color: #333;
-        }
-        .skill-bar {
-            background-color: #e0e0e0;
-            border-radius: 10px;
-            overflow: hidden;
-            height: 12px;
-            position: relative;
-        }
-        .skill-level {
-            height: 100%;
-            background: linear-gradient(90deg, #4CAF50, #45a049);
-            border-radius: 10px;
-            width: 0;
-            transition: width 1.5s ease-in-out;
-            position: relative;
-        }
-        .tools-list, .soft-skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        .tool-item, .soft-skill-item {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            white-space: nowrap;
-        }
-
-        /* Simple contact layout to work with your media query using .contact-wrapper */
-        .contact-wrapper {
-            display: grid;
-            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-            gap: 2.5rem;
-            align-items: flex-start;
-        }
-        .contact-info p {
-            margin-bottom: 1rem;
-        }
-        .contact-methods {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        .contact-method {
-            display: flex;
-            gap: 0.75rem;
-            align-items: center;
-        }
-        .contact-method i {
-            font-size: 1.2rem;
-        }
-        .contact-form .form-group {
-            margin-bottom: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.25rem;
-        }
-        .contact-form label {
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-        .contact-form input,
-        .contact-form textarea {
-            padding: 0.6rem 0.75rem;
-            border-radius: 8px;
-            border: 1px solid #cbd5e1;
-            font-size: 0.95rem;
-            font-family: inherit;
-        }
-        .contact-form textarea {
-            resize: vertical;
-        }
-        .social-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-top: 0.5rem;
-        }
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-    </style>
 </head>
+
 <body>
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <div class="sidebar-logo"><strong>LZ</strong></div>
-            <div class="sidebar-tagline">Web Developer &amp; UI/UX Designer</div>
-        </div>
 
-        <ul class="sidebar-menu">
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+<!-- =============================== SIDEBAR =============================== -->
+<aside class="sidebar">
+    <div class="sidebar-header">
+        <div class="sidebar-logo"><strong>LZ</strong></div>
+        <div class="sidebar-tagline">Web Developer & UI/UX Designer</div>
+    </div>
 
-        <!-- Language button (works with your JS language toggle) -->
-        <div class="language-switcher">
-            <button id="languageBtn" class="lang-btn">中文</button>
-        </div>
-    </aside>
+    <ul class="sidebar-menu">
+        <li><a id="navHome" href="#home" class="active">Home</a></li>
+        <li><a id="navAbout" href="#about">About</a></li>
+        <li><a id="navEducation" href="#education">Education</a></li>
+        <li><a id="navExperience" href="#experience">Experience</a></li>
+        <li><a id="navSkills" href="#skills">Skills</a></li>
+        <li><a id="navContact" href="#contact">Contact</a></li>
+    </ul>
 
-    <!-- MAIN CONTENT -->
-    <main class="main-content">
+    <div class="language-switcher">
+        <button id="languageBtn" class="lang-btn">中文</button>
+    </div>
+</aside>
 
-        <!-- HERO / HOME SECTION -->
+
+<!-- =============================== MAIN CONTENT =============================== -->
+<main class="main-content">
+
+<!-- =============================== HERO SECTION =============================== -->
 <section id="home" class="hero-section">
     <div class="hero-content">
-        <h1>Welcome to <span class="gradient-text">LZ's Profile</span></h1>
-        <p class="hero-subtitle">Web Developer • UI/UX Designer • Problem Solver</p>
-        <p class="hero-description">
-            I build modern, fast, elegant websites and web applications.
-            Behind every successful brand is a story told through design — clear, meaningful, and unforgettable.
-            I believe that UI/UX is one of the strongest drivers of business growth and customer conversion.
+        <h1 id="heroTitle">Welcome to <span class="gradient-text">LZ's Profile</span></h1>
+
+        <p class="hero-subtitle" id="heroSubtitle">
+            Web Developer • UI/UX Designer • Problem Solver
+        </p>
+
+        <p class="hero-description" id="heroDesc">
+            I build modern, fast, elegant websites and web applications. 
+            Behind every successful brand is a story told through design —
+            clear, meaningful, and unforgettable.
         </p>
 
         <div class="hero-buttons">
-            <a href="#contact" class="btn primary-btn">Contact Me</a>
-            <a href="#about" class="btn secondary-btn">About Me</a>
+            <a href="#contact" class="btn primary-btn" id="heroBtn1">Contact Me</a>
+            <a href="#about" class="btn secondary-btn" id="heroBtn2">About Me</a>
         </div>
 
         <div class="hero-icons">
             <a href="https://github.com/Sally-Gaohuang" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/%E6%B1%89%E5%AD%97%E5%AD%A6%E9%97%AE-possible-hanzi-a1a44212b" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="mailto:linzhiatwork@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
-            <!-- WeChat QR -->
-            <a href="#" id="showQr" class="social-link"><i class="fas fa-qrcode"></i></a>
-             <!-- WhatsApp QR -->
-            <a href="#" id="showWhatsapp" class="social-link"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" id="showQr"><i class="fab fa-weixin"></i></a>
+            <a href="#" id="showWhatsapp"><i class="fab fa-whatsapp"></i></a>
         </div>
-        <div id="qrModal" class="qr-modal">
-            <div class="qr-modal-content">
-                <img src="images/wechat.jpeg" alt="WeChat QR Code">
-            </div>
-        </div>
-        <div id="waModal" class="qr-modal">
-            <div class="qr-modal-content">
-                <img src="images/whatsapp.jpeg" alt="WhatsApp QR Code">
-            </div>
-        </div>
-
-        <!-- CLOSE HERO CONTENT HERE -->
     </div>
 
-    <!-- HERO IMAGE -->
     <div class="hero-image-container">
         <img src="images/my.PNG" alt="Lin Zhi" class="hero-image">
     </div>
 </section>
 
 
-        <!-- ABOUT SECTION -->
-        <section id="about" class="section">
-            <h2 class="section-title">About Me</h2>
+<!-- =============================== ABOUT =============================== -->
+<section id="about" class="section">
+    <h2 class="section-title" id="aboutTitle">About Me</h2>
 
-            <!-- These two paragraphs are what your JS language system will replace -->
-            <p class="about-paragraph">
-                I'm a passionate web developer who transforms ideas into clean, modern and functional digital experiences.
-                With strong learning ability and hands-on project experience, I help small businesses and individuals build
-                a professional and trustworthy online presence.
-            </p>
-            <p class="about-paragraph">
-                I specialize in frontend development, UI/UX design, and building complete web solutions that are visually appealing,
-                responsive, and optimized for performance.
-            </p>
+    <p class="about-paragraph" id="aboutPara1">
+        I’m a passionate web developer who transforms ideas into clean, modern and functional digital experiences.
+    </p>
 
-            <div class="about-stats-v2">
-                <a href="#experience" class="stat-card fade-in-up">
-                    <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
-                    <div class="stat-number">2+</div>
-                    <div class="stat-label">Years Experience</div>
-                </a>
-                <a href="#skills" class="stat-card fade-in-up">
-                    <div class="stat-icon"><i class="fas fa-code"></i></div>
-                    <div class="stat-number">50+</div>
-                    <div class="stat-label">Projects Delivered</div>
-                </a>
-                <a href="#contact" class="stat-card fade-in-up">
-                    <div class="stat-icon"><i class="fas fa-heart"></i></div>
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Client Satisfaction</div>
-                </a>
+    <p class="about-paragraph" id="aboutPara2">
+        I specialize in frontend development, UI/UX design, and building complete web solutions.
+    </p>
+
+    <p class="about-paragraph" id="aboutPara3"></p>
+    <p class="about-paragraph" id="aboutPara4"></p>
+
+    <div class="about-stats-v2">
+        <a href="#experience" class="stat-card fade-in-up">
+            <div class="stat-icon"><i class="fas fa-briefcase"></i></div>
+            <div class="stat-number">2+</div>
+            <div class="stat-label">Years Experience</div>
+        </a>
+        <a href="#skills" class="stat-card fade-in-up">
+            <div class="stat-icon"><i class="fas fa-code"></i></div>
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Projects Delivered</div>
+        </a>
+        <a href="#contact" class="stat-card fade-in-up">
+            <div class="stat-icon"><i class="fas fa-heart"></i></div>
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Client Satisfaction</div>
+        </a>
+    </div>
+</section>
+
+
+<!-- =============================== EDUCATION =============================== -->
+<section id="education" class="section">
+    <h2 class="section-title" id="eduTitle">Education</h2>
+
+    <div class="edu-list">
+        <div class="edu-item fade-in-up">
+            <div class="edu-dot"></div>
+            <div class="edu-content">
+                <span class="edu-year">2023 – 2026</span>
+                <h3 id="eduDegree1">Bachelor of Information Technology — NUS</h3>
+                <p id="eduDesc1">Software development, database systems, data analytics, machine learning.</p>
             </div>
-        </section>
+        </div>
 
-        <!-- EDUCATION SECTION -->
-        <section id="education" class="section">
-            <h2 class="section-title">Education</h2>
-
-            <div class="edu-list">
-                <div class="edu-item fade-in-up">
-                    <div class="edu-dot"></div>
-                    <div class="edu-content">
-                        <span class="edu-year">2023 – 2026</span>
-                        <h3>Bachelor of Information Technology — National University of Singapore (NUS)</h3>
-                        <p class="edu-desc">
-                            School of Computing, focusing on software development, database systems,
-                            data analytics and applied machine learning.
-                        </p>
-                        <div class="edu-tags">
-                            <span>Software Engineering</span>
-                            <span>Database Systems</span>
-                            <span>Data Analytics</span>
-                            <span>Machine Learning</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="edu-item fade-in-up">
-                    <div class="edu-dot"></div>
-                    <div class="edu-content">
-                        <span class="edu-year">2018 – 2020</span>
-                        <h3>Diploma in Human Capital Management — Republic Polytechnic</h3>
-                        <p class="edu-desc">
-                            Built strong foundations in HR operations, workforce analytics, business strategy
-                            and organisational behaviour.
-                        </p>
-                        <div class="edu-tags">
-                            <span>HR Analytics</span>
-                            <span>Business Strategy</span>
-                            <span>Digital HR</span>
-                        </div>
-                    </div>
-                </div>
+        <div class="edu-item fade-in-up">
+            <div class="edu-dot"></div>
+            <div class="edu-content">
+                <span class="edu-year">2018 – 2020</span>
+                <h3 id="eduDegree2">Diploma in Human Capital Management — RP</h3>
+                <p id="eduDesc2">HR operations, workforce analytics, business strategy, organisational behaviour.</p>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
-        <!-- EXPERIENCE SECTION -->
-        <section id="experience" class="section">
-            <h2 class="section-title">Experience</h2>
 
-            <div class="experience-grid">
-                <div class="experience-card fade-in-up">
-                    <h3>Senior Software Developer — Freddy</h3>
-                    <p class="duration">2022 – Present</p>
-                    <ul class="responsibilities">
-                        <li>Collaborate with cross-functional teams to design and implement new features.</li>
-                        <li>Mentor junior developers and conduct code reviews.</li>
-                        <li>Optimize application performance, improving load times and reliability.</li>
-                    </ul>
-                </div>
+<!-- =============================== EXPERIENCE =============================== -->
+<section id="experience" class="section">
+    <h2 class="section-title" id="expTitle">Experience</h2>
 
-                <div class="experience-card fade-in-up">
-                    <h3>UI/UX & Web Developer — Sally</h3>
-                    <p class="duration">2021 – Present</p>
-                    <ul class="responsibilities">
-                        <li>Develop and maintain front-end features using HTML, CSS and JavaScript.</li>
-                        <li>Assist in backend API integration using Python-based frameworks.</li>
-                        <li>Implement responsive designs based on UX/UI wireframes.</li>
-                        <li>Work closely with stakeholders to improve user experience.</li>
-                    </ul>
-                </div>
+    <div class="experience-grid">
+
+        <!-- Job 1 -->
+        <div class="experience-card fade-in-up">
+            <h3 id="expTitle1">Senior Software Developer — Freddy</h3>
+            <p class="duration" id="expDuration1">2022 – Present</p>
+            <ul>
+                <li id="expItem1_1">Design and implement new features</li>
+                <li id="expItem1_2">Mentor junior developers</li>
+                <li id="expItem1_3">Optimize performance & reliability</li>
+            </ul>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="experience-card fade-in-up">
+            <h3 id="expTitle2">UI/UX & Web Developer — Sally</h3>
+            <p class="duration" id="expDuration2">2021 – Present</p>
+            <ul>
+                <li id="expItem2_1">Front-end development (HTML, CSS, JS)</li>
+                <li id="expItem2_2">Backend API integration</li>
+                <li id="expItem2_3">Responsive UI/UX implementation</li>
+                <li id="expItem2_4">User experience improvement</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =============================== SKILLS =============================== -->
+<section id="skills" class="section">
+    <h2 class="section-title" id="skillsTitle">Skills</h2>
+
+    <div class="skills-container">
+        <!-- Placeholder — you can fill in later -->
+        <p>Skills section content here...</p>
+    </div>
+</section>
+
+
+<!-- =============================== CONTACT =============================== -->
+<section id="contact" class="section">
+    <h2 class="section-title" id="contactTitle">Contact</h2>
+
+    <div class="contact-wrapper">
+
+        <!-- ================= LEFT SIDE ================= -->
+        <div class="contact-info">
+
+            <h3 id="contactSubtitle">Let's Connect</h3>
+            <p id="contactText">I'm always open to new opportunities and creative projects.</p>
+
+            <!-- Email -->
+            <div class="contact-detail-box">
+                <p><strong>Email</strong></p>
+                <p>linzhiatwork@gmail.com</p>
             </div>
-        </section>
 
-        <!-- SKILLS SECTION -->
-        <section id="skills" class="section">
-            <h2 class="section-title">Skills</h2>
-
-            <div class="skills-container">
-                <div class="skills-category fade-in-up">
-                    <h3>Technical Skills</h3>
-
-                    <div class="skill-item">
-                        <div class="skill-name-wrapper">
-                            <span class="skill-name">HTML / CSS</span>
-                            <span class="skill-percentage">90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-level" data-level="90"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-item">
-                        <div class="skill-name-wrapper">
-                            <span class="skill-name">JavaScript</span>
-                            <span class="skill-percentage">85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-level" data-level="85"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-item">
-                        <div class="skill-name-wrapper">
-                            <span class="skill-name">React</span>
-                            <span class="skill-percentage">75%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-level" data-level="75"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-item">
-                        <div class="skill-name-wrapper">
-                            <span class="skill-name">Node.js</span>
-                            <span class="skill-percentage">70%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-level" data-level="70"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skills-category fade-in-up">
-                    <h3>Tools &amp; Technologies</h3>
-                    <div class="tools-list">
-                        <div class="tool-item">Git</div>
-                        <div class="tool-item">Docker</div>
-                        <div class="tool-item">Ubuntu</div>
-                        <div class="tool-item">VS Code</div>
-                        <div class="tool-item">Google Colab</div>
-                        <div class="tool-item">AWS</div>
-                        <div class="tool-item">Figma</div>
-                        <div class="tool-item">REST APIs</div>
-                        <div class="tool-item">MongoDB</div>
-                        <div class="tool-item">PostgreSQL</div>
-                    </div>
-
-                    <h3 style="margin-top:1.5rem;">Soft Skills</h3>
-                    <div class="soft-skills-list">
-                        <div class="soft-skill-item">Problem Solving</div>
-                        <div class="soft-skill-item">Time Management</div>
-                        <div class="soft-skill-item">Team Collaboration</div>
-                        <div class="soft-skill-item">Leadership</div>
-                        <div class="soft-skill-item">Communication</div>
-                        <div class="soft-skill-item">Adaptability</div>
-                    </div>
-                </div>
+            <!-- Location -->
+            <div class="contact-detail-box">
+                <p><strong>Location</strong></p>
+                <p>China & Singapore</p>
             </div>
-        </section>
 
-        <!-- CONTACT SECTION -->
-        <section id="contact" class="section">
-            <h2 class="section-title">Contact</h2>
+            <!-- Social Links -->
+            <div class="contact-socials">
+                <a href="https://github.com/Sally-Gaohuang" target="_blank">GitHub</a>
+                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+            </div>
 
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <h3>Let&#39;s Connect</h3>
-                    <p>I'm always open to discussing new opportunities and creative projects.</p>
+        </div>
 
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <strong>Email</strong><br>
-                                <span>linzhiatwork@gmail.com</span>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <strong>Location</strong><br>
-                                <span>China &amp; Singapore</span>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="social-links">
-                        <a href="https://github.com/Sally-Gaohuang/hanzi-student-portal" class="social-link" target="_blank">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                        <a href="https://www.linkedin.com/in/%E6%B1%89%E5%AD%97%E5%AD%A6%E9%97%AE-possible-hanzi-a1a44212b" class="social-link" target="_blank">
-                            <i class="fab fa-linkedin"></i> LinkedIn
-                        </a>
-                    </div>
+        <!-- ================= RIGHT SIDE (FORM) ================= -->
+        <form class="contact-form" id="contactForm">
+            
+            <div class="contact-fields">
+
+                <!-- Name -->
+                <div class="form-group">
+                    <label id="labelName">Your Name</label>
+                    <input id="name" type="text" required>
                 </div>
 
-                <form class="contact-form">
+                <!-- Email -->
+                <div class="form-group">
+                    <label id="labelEmail">Your Email</label>
+                    <input id="email" type="email" required>
+                </div>
 
-                    <div class="contact-fields">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input id="name" name="name" type="text" placeholder="Your Name" required>
-                        </div>
+                <!-- Message -->
+                <div class="form-group">
+                    <label id="labelMessage">Your Message</label>
+                    <textarea id="message" rows="5" required></textarea>
+                </div>
 
-                        <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input id="email" name="email" type="email" placeholder="Your Email" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-                        </div>
-
-                        <button type="submit" class="btn primary-btn contact-submit-btn">Send Message</button>
-                    </div>
-
-                    <!-- SUCCESS MESSAGE (outside contact-fields, but inside form) -->
-                    <div id="successMessage" class="success-message hidden">
-                        <img src="images/4.png" alt="Success!" class="success-img">
-                        <p>🎉 Message submitted!</p>
-                    </div>
-
-                </form>
+                <!-- Submit Button -->
+                <button type="submit" class="btn primary-btn" id="sendBtn">
+                    Send Message
+                </button>
             </div>
-        </section>
 
-        <!-- FOOTER -->
-        <footer class="footer section" style="padding-top:2rem;">
-            <p>&copy; 2024 Lin Zhi. All rights reserved.</p>
-            <p>Built with passion and modern web technologies.</p>
-        </footer>
-    </main>
-    <script src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
-    <script>
-        emailjs.init("DbHd-b86V3Sga-r8G");
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="script.js"></script>
+            <!-- Success Message -->
+            <div id="successMessage" class="success-message hidden">
+                <img src="images/4.png" class="success-img" alt="Success!">
+                <p>🎉 Message submitted!</p>
+            </div>
+
+        </form>
+
+    </div>
+</section>
 
 
-    <!-- Your script file with language toggle, scroll, etc. -->
-    <script src="script.js"></script>
+<!-- =============================== FOOTER =============================== -->
+<footer class="footer">
+    <p id="footer1">&copy; 2024 Lin Zhi. All rights reserved.</p>
+    <p id="footer2">Built with passion and modern web technologies.</p>
+</footer>
 
-    <!-- Skill bar animation (moved from your previous HTML) -->
-    <script>
-        function animateSkillBars() {
-            const skillLevels = document.querySelectorAll('.skill-level');
 
-            skillLevels.forEach(levelBar => {
-                const targetLevel = parseInt(levelBar.getAttribute('data-level'), 10);
-                let currentWidth = 0;
-                const increment = targetLevel / 50;
+<!-- =============================== QR MODALS =============================== -->
+<div id="qrModal" class="qr-modal">
+    <div class="qr-modal-content">
+        <img src="images/wechat.jpeg" alt="WeChat QR">
+    </div>
+</div>
 
-                const timer = setInterval(() => {
-                    currentWidth += increment;
-                    if (currentWidth >= targetLevel) {
-                        currentWidth = targetLevel;
-                        clearInterval(timer);
-                    }
-                    levelBar.style.width = currentWidth + '%';
-                }, 30);
-            });
-        }
+<div id="waModal" class="qr-modal">
+    <div class="qr-modal-content">
+        <img src="images/whatsapp.jpeg" alt="WhatsApp QR">
+    </div>
+</div>
 
-        function handleSkillScroll() {
-            const skillsSection = document.getElementById('skills');
-            const sectionPosition = skillsSection.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.3;
 
-            if (sectionPosition < screenPosition) {
-                animateSkillBars();
-                window.removeEventListener('scroll', handleSkillScroll);
-            }
-        }
+<!-- =============================== SCRIPTS =============================== -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+    emailjs.init("DbHd-b86V3Sga-r8G");
+</script>
 
-        document.addEventListener('DOMContentLoaded', function () {
-            window.addEventListener('scroll', handleSkillScroll);
-            handleSkillScroll();
-        });
-    </script>
+<script src="script.js"></script>
 </body>
 </html>
+
