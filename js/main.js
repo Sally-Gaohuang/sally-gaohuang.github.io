@@ -1,30 +1,18 @@
 const translations = {
     en: {
         sidebar_tagline: "Business transformation, not tech theatre",
-        philosophy_title: "Technology is the enabler. Business improvement is the outcome.",
-        philosophy_text: "Every workflow, dashboard, automation, and digital solution should remove friction and create measurable business value.",
         nav_home: "Home",
         nav_about: "Profile",
-        nav_education: "Education",
+        nav_foundation: "Professional & Academic Foundation",
         nav_solutions: "Business Solutions",
         nav_skills: "Capabilities",
         nav_contact: "Contact",
-        signal_1_label: "Focus",
-        signal_1_text: "Operational excellence",
-        signal_2_label: "Approach",
-        signal_2_text: "Business-led automation",
-        signal_3_label: "Outcome",
-        signal_3_text: "Clearer, faster, smarter execution",
         hero_kicker: "Business Process Automation · Digital Transformation",
         hero_title: "Technology is the enabler. Business improvement is the outcome.",
         hero_desc: "I help organisations simplify workflows, reduce manual effort and improve decision-making through automation, analytics and practical technology solutions. Combining operational experience with modern digital capabilities, I focus on creating sustainable improvements that deliver measurable business value.",
         hero_btn_1: "Explore solutions",
         hero_btn_2: "View profile",
         portrait_role: "Business Process Automation & Digital Transformation Practitioner",
-        float_1_label: "BUSINESS VALUE",
-        float_1_title: "Reduce manual work. Improve operational visibility.",
-        float_2_label: "AUTOMATION FOCUS",
-        float_2_title: "Automate repetitive work. Enable smarter decisions.",
         about_tag: "Profile",
         about_title: "Bridging Operations, Analytics & Technology",
         about_p1: "Having worked across different levels of organisations, from project sites to headquarters, I have developed a practical understanding of how businesses operate, how decisions are made, and where operational inefficiencies, risks and opportunities often emerge.",
@@ -38,11 +26,20 @@ const translations = {
         focus_4: "Support better decision-making",
         focus_5: "Accelerate digital transformation initiatives",
         about_p6: "I believe technology should never be implemented for its own sake. Technology is the enabler. Business improvement is the outcome. My passion lies in transforming business challenges into practical, sustainable and measurable solutions that create long-term value.",
-        edu_title: "Education",
-        edu_degree_1: "Bachelor of Information Technology, National University of Singapore",
-        edu_desc_1: "Specialisation: Business Analytics — Data Analytics, Machine Learning, Database Systems, Application Development, Artificial Intelligence, Business Technology Solutions.",
-        edu_degree_2: "Human capital & business operations background",
-        edu_desc_2: "Practical understanding of workforce coordination, organisational realities, and business support functions.",
+        foundation_tag: "Foundation",
+        foundation_title: "Professional & Academic Foundation",
+        prof_title: "Operational Leadership & Business Experience",
+        prof_duration: "10+ years of hands-on experience",
+        prof_desc_1: "Developed through hands-on experience across different levels of organisations, from project site execution to headquarters administration and management support functions.",
+        prof_desc_2: "This journey provided practical exposure to workforce management, operational coordination, compliance, risk management and business decision-making processes.",
+        prof_desc_3: "Working closely with both frontline operations and management teams has enabled me to understand how work is executed, how resources are allocated and how organisational challenges are addressed.",
+        prof_note: "This operational foundation continues to shape my approach to automation, analytics and digital transformation initiatives.",
+        academic_title: "National University of Singapore (NUS)",
+        academic_degree: "Bachelor of Information Technology",
+        academic_spec: "Specialisation: Business Analytics",
+        academic_desc_1: "To further strengthen my ability to solve business and operational challenges, I pursued formal studies in Information Technology with a focus on Business Analytics.",
+        academic_desc_2: "The programme expanded my capabilities in data analytics, machine learning, application development, database systems, artificial intelligence and business technology solutions.",
+        academic_note: "The objective was never technology for its own sake, but to develop practical tools and analytical capabilities that support better business outcomes, operational efficiency and informed decision-making.",
         solutions_title: "Business Solutions",
         solutions_sub: "Business challenges, technology-enabled solutions, measurable outcomes.",
         sol1_title: "Insurance Management & Benefits Portal",
@@ -67,27 +64,34 @@ const translations = {
         sol3_value_label: "Business Value",
         sol3_value: "Reduced repetitive work, improved consistency and enhanced operational visibility.",
         skills_title: "Capabilities",
+        cap_subtitle: "Business-first capabilities that drive operational excellence",
         cap_group_1: "Operations & Administration",
+        cap_prop_1: "Streamlining back-office operations for clarity, control and compliance.",
         op1: "Workforce Administration",
         op2: "HR Operations",
         op3: "Compliance Management",
         op4: "Insurance Administration",
         op5: "Operational Coordination",
         cap_group_2: "Automation & Technology",
+        cap_prop_2: "Reducing manual effort through scalable digital workflows.",
         auto1: "Workflow Automation",
         auto2: "Process Optimisation",
         auto3: "Reporting Automation",
         auto4: "Digitalisation",
         auto5: "Artificial Intelligence",
         cap_group_3: "Data & Analytics",
+        cap_prop_3: "Turning operational data into actionable insights.",
         data1: "Business Analytics",
         data2: "Data Visualisation",
         data3: "Machine Learning",
         data4: "Predictive Analytics",
         data5: "Decision Support Analytics",
         cap_group_4: "Technical Foundations",
+        cap_prop_4: "Modern tools that power business solutions.",
+        cap_group_5: "Artificial Intelligence Applications",
+        cap_prop_5: "Practical AI solutions that enhance productivity and decision-making.",
         sec_title: "Security & Governance",
-        sec_note: "Supporting competencies that enable sustainable and resilient business operations.",
+        sec_prop: "Embedding security, governance and resilience into business operations.",
         contact_title: "Contact",
         contact_subtitle: "Open to conversations about transformation, analytics, automation, and operational improvement.",
         contact_text: "If you are looking for someone who understands business operations and uses technology as a practical lever for improvement, this is the right conversation to start.",
@@ -104,30 +108,18 @@ const translations = {
     },
     zh: {
         sidebar_tagline: "不是技术炫技，而是业务改善",
-        philosophy_title: "技术只是手段。业务改善才是结果。",
-        philosophy_text: "每一个工作流、看板、自动化动作和数字化方案，都应该减少摩擦并创造可衡量的业务价值。",
         nav_home: "首页",
         nav_about: "Profile",
-        nav_education: "教育",
+        nav_foundation: "专业与学术背景",
         nav_solutions: "业务解决方案",
         nav_skills: "能力",
         nav_contact: "联系",
-        signal_1_label: "重点",
-        signal_1_text: "运营卓越",
-        signal_2_label: "方法",
-        signal_2_text: "业务导向自动化",
-        signal_3_label: "结果",
-        signal_3_text: "更清晰、更快速、更聪明的执行",
         hero_kicker: "业务流程自动化 · 数字化转型",
         hero_title: "技术只是手段。业务改善才是结果。",
         hero_desc: "我通过自动化、分析和实用技术解决方案，帮助组织简化工作流、减少人工投入并改进决策。结合运营经验与现代数字能力，专注于创造可持续改进，交付可衡量的业务价值。",
         hero_btn_1: "探索解决方案",
         hero_btn_2: "查看定位",
         portrait_role: "业务流程自动化与数字化转型实践者",
-        float_1_label: "业务价值",
-        float_1_title: "减少人工工作，提升运营可见性。",
-        float_2_label: "自动化聚焦",
-        float_2_title: "自动化重复工作，赋能更明智决策。",
         about_tag: "Profile",
         about_title: "连接运营、分析与技术",
         about_p1: "在组织不同层级（从项目现场到总部）的工作经历，让我对业务运作、决策方式以及运营低效、风险和机会点有了实际理解。",
@@ -141,11 +133,20 @@ const translations = {
         focus_4: "支持更优决策",
         focus_5: "加速数字化转型",
         about_p6: "我相信技术永远不应为了自身而实施。技术是手段，业务改善是结果。我的热情在于将业务挑战转化为实用、可持续且可衡量的解决方案，创造长期价值。",
-        edu_title: "教育",
-        edu_degree_1: "新加坡国立大学 信息技术学士",
-        edu_desc_1: "专攻商业分析 — 数据分析、机器学习、数据库系统、应用开发、人工智能、商业技术解决方案。",
-        edu_degree_2: "人力资本与业务运营背景",
-        edu_desc_2: "建立了对劳动力协同、组织现实与业务支持职能的实践理解。",
+        foundation_tag: "背景",
+        foundation_title: "专业与学术背景",
+        prof_title: "运营领导力与业务经验",
+        prof_duration: "10年以上实战经验",
+        prof_desc_1: "通过在组织不同层级（从项目现场到总部管理）的实践经验积累而成。",
+        prof_desc_2: "这段经历让我获得了人力管理、运营协调、合规、风险管理和业务决策流程的实践认知。",
+        prof_desc_3: "与一线运营和管理团队的紧密合作，使我深入理解了工作执行、资源分配和组织挑战应对的方式。",
+        prof_note: "这个运营基础持续塑造着我在自动化、分析和数字化转型方面的方法论。",
+        academic_title: "新加坡国立大学 (NUS)",
+        academic_degree: "信息技术学士",
+        academic_spec: "专攻：商业分析",
+        academic_desc_1: "为了进一步加强解决业务和运营挑战的能力，我选择攻读信息技术学位，专注于商业分析方向。",
+        academic_desc_2: "该课程扩展了我在数据分析、机器学习、应用开发、数据库系统、人工智能和商业技术解决方案方面的能力。",
+        academic_note: "目标从来不是为技术而技术，而是开发实用的工具和分析能力，以支持更好的业务成果、运营效率和明智决策。",
         solutions_title: "业务解决方案",
         solutions_sub: "业务挑战、技术解决方案、可衡量成果。",
         sol1_title: "保险管理与福利门户",
@@ -170,27 +171,34 @@ const translations = {
         sol3_value_label: "业务价值",
         sol3_value: "减少重复工作，提升一致性，增强运营可见性。",
         skills_title: "能力",
+        cap_subtitle: "以业务为先的能力体系，驱动运营卓越",
         cap_group_1: "运营与行政管理",
+        cap_prop_1: "简化后台运营，实现清晰、可控和合规。",
         op1: "人力管理",
         op2: "HR运营",
         op3: "合规管理",
         op4: "保险管理",
         op5: "运营协调",
         cap_group_2: "自动化与技术",
+        cap_prop_2: "通过可扩展的数字工作流减少人工投入。",
         auto1: "工作流自动化",
         auto2: "流程优化",
         auto3: "报表自动化",
         auto4: "数字化",
         auto5: "人工智能",
         cap_group_3: "数据与分析",
+        cap_prop_3: "将运营数据转化为可执行的洞察。",
         data1: "商业分析",
         data2: "数据可视化",
         data3: "机器学习",
         data4: "预测分析",
         data5: "决策支持分析",
         cap_group_4: "技术基础",
+        cap_prop_4: "支撑业务解决方案的现代工具。",
+        cap_group_5: "人工智能应用",
+        cap_prop_5: "提升生产力和决策质量的实用AI解决方案。",
         sec_title: "安全与治理",
-        sec_note: "支撑可持续和韧性业务运营的辅助能力。",
+        sec_prop: "将安全、治理和韧性融入业务运营。",
         contact_title: "联系",
         contact_subtitle: "欢迎围绕转型、分析、自动化和运营改善展开交流。",
         contact_text: "如果你希望找到一个既理解业务运营、又把技术当作务实改善杠杆的人，这就是一个合适的对话起点。",
@@ -222,6 +230,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const contactForm = document.getElementById("contactForm");
     const contactFields = document.querySelector(".contact-fields");
     const successMessage = document.getElementById("successMessage");
+    const errorMessage = document.getElementById("errorMessage");
+
+    // Initialize EmailJS
+    emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
 
     const applyLanguage = (lang) => {
         const dictionary = translations[lang] || translations.en;
@@ -300,7 +312,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (!entry.isIntersecting) return;
                 const currentId = entry.target.getAttribute("id");
                 navLinks.forEach((link) => {
-                    link.classList.toggle("active", link.getAttribute("href") === `#${currentId}`);
+                    const href = link.getAttribute("href");
+                    link.classList.toggle("active", href === `#${currentId}`);
                 });
             });
         },
@@ -355,11 +368,49 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     if (contactForm) {
-        contactForm.addEventListener("submit", (event) => {
+        contactForm.addEventListener("submit", async (event) => {
             event.preventDefault();
-            if (contactFields && successMessage) {
-                contactFields.classList.add("hidden");
-                successMessage.classList.remove("hidden");
+            
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+            
+            if (!name || !email || !message) {
+                if (errorMessage) errorMessage.classList.remove("hidden");
+                setTimeout(() => {
+                    if (errorMessage) errorMessage.classList.add("hidden");
+                }, 3000);
+                return;
+            }
+            
+            const templateParams = {
+                from_name: name,
+                from_email: email,
+                message: message,
+                to_name: "Lin Zhi",
+                reply_to: email
+            };
+            
+            try {
+                await emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams);
+                if (contactFields) contactFields.classList.add("hidden");
+                if (successMessage) successMessage.classList.remove("hidden");
+                if (errorMessage) errorMessage.classList.add("hidden");
+                
+                document.getElementById("name").value = "";
+                document.getElementById("email").value = "";
+                document.getElementById("message").value = "";
+                
+                setTimeout(() => {
+                    if (successMessage) successMessage.classList.add("hidden");
+                    if (contactFields) contactFields.classList.remove("hidden");
+                }, 5000);
+            } catch (error) {
+                console.error("Email send failed:", error);
+                if (errorMessage) errorMessage.classList.remove("hidden");
+                setTimeout(() => {
+                    if (errorMessage) errorMessage.classList.add("hidden");
+                }, 3000);
             }
         });
     }
