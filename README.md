@@ -1,170 +1,132 @@
-# 🌐 Lin Zhi — Personal Portfolio Website  
+# LINZHI Portfolio
 
-A modern, responsive personal website designed to showcase my background, skills, education, work experience, and projects.  
-This portfolio reflects my journey as a learner in **Information Technology (NUS BIT)**, a part-time **software developer**, and an aspiring **tech-driven entrepreneur**.
+## Overview
 
-Built with **HTML, CSS, and JavaScript**, the site includes smooth animations, scroll effects, bilingual support (EN/中文), and a clean layout for easy navigation.
+This portfolio showcases my journey in bridging business operations, analytics and technology.
 
----
+With over 15 years of experience in workforce administration, business operations and organisational support, I focus on helping organisations improve efficiency through process optimisation, automation, data analytics and artificial intelligence.
 
-## 🚀 Live Demo  
-👉 **Visit my website:**  
-https://sally-gaohuang.github.io
+My philosophy is simple:
 
----
-
-## ✨ Features  
-
-### 🔹 **Professional Personal Branding**
-- Hero section with a clean introduction  
-- Social links (GitHub, LinkedIn, email)  
-- Bilingual language toggle (English / 中文)
-
-### 🔹 **Dynamic & Interactive UI**
-- Smooth scroll animations  
-- Skills bars that animate on scroll  
-- Responsive layout for mobile, tablet, desktop  
-- Modern typography & gradient effects  
-
-### 🔹 **Well-Organized Sections**
-- Home  
-- About Me  
-- Education  
-- Experience  
-- Skills & Technologies  
-- Contact  
-
-### 🔹 **Optimized for Career & Academic Growth**
-- Highlights my NUS BIT journey  
-- Showcases real projects  
-- Demonstrates technical & soft skills  
-- Perfect for interview and MBA application portfolio  
+> Technology is not the goal.
+> Business improvement is the goal.
+> Technology is simply the enabler.
 
 ---
 
-## 🛠️ Technologies Used  
+## About Me
 
-### **Frontend**
-- HTML5  
-- CSS3 (Flexbox, Grid, custom animations)  
-- JavaScript (DOM manipulation, scroll triggers)
+I have worked across different levels of organisations, from project sites to headquarters, gaining first-hand experience in workforce management, business operations and administrative processes.
 
-### **Tools & Platforms**
-- Git & GitHub  
-- GitHub Pages (deployment)  
-- VS Code  
-- Font Awesome (icons)  
-- Google Fonts  
+Throughout my career, I have observed that many operational challenges are not caused by a lack of people or effort, but by inefficient processes, fragmented information and manual workflows.
 
-### **Backend & Other Skills (Not used directly but part of my overall expertise)**
-- Python (Flask web development)  
-- SQL (MySQL database design)  
-- Docker & Docker Compose  
-- REST APIs  
-- Cybersecurity basics (JWT, bcrypt)  
+To strengthen my ability to solve these challenges, I pursued a Bachelor of Information Technology at the National University of Singapore (NUS), specialising in Business Analytics.
+
+Today, I combine operational expertise with technology, automation and AI to help organisations work smarter and make better decisions.
 
 ---
 
-## 📁 Project Structure  
+## Areas of Focus
 
-```
-.
-├── index.html
-├── styles.css
-├── script.js
-├── images/
-│   ├── flower.jpg
-│   ├── my.png
-│   └── screenshots...
-└── README.md
-```
+### Business Process Automation
 
----
+Designing solutions that reduce repetitive work and improve operational efficiency.
 
-## 📸 Screenshots  
+### Business Analytics
 
-### Homepage Preview  
-![Home Section](images/screenshot-home.png)
+Transforming operational data into meaningful insights that support decision-making.
 
-### Skills Section  
-![Skills Section](images/screenshot-skills.png)
+### Artificial Intelligence
 
-*(Replace with your actual screenshots — I can help you take and optimize them.)*
+Exploring practical AI applications that enhance productivity and create business value.
+
+### Digital Transformation
+
+Helping organisations modernise workflows and adopt technology-driven improvements.
 
 ---
 
-## 💡 How to Run Locally  
+## Core Capabilities
 
-Clone the repository:
+### Operations & Administration
 
-```bash
-git clone https://github.com/Sally-Gaohuang/Sally-MyProfile.github.io
-```
+* Workforce Administration
+* HR Operations
+* Compliance Management
+* Insurance Administration
+* Operational Coordination
 
-Open the folder:
+### Automation & Technology
 
-```bash
-cd Sally-MyProfile.github.io
-```
+* Workflow Automation
+* Process Optimisation
+* Reporting Automation
+* Digitalisation
+* Artificial Intelligence
 
-Launch the website:
+### Data & Analytics
 
-- Windows: double-click `index.html`  
-- macOS: `open index.html`  
-- Linux: `xdg-open index.html`
+* Business Analytics
+* Data Visualisation
+* Machine Learning
+* Predictive Analytics
+* Decision Support Analytics
 
----
+### Technical Foundations
 
-## 🧩 Future Improvements  
-
-- Add backend (Flask or EmailJS) for real contact form  
-- Add full Chinese translation for all sections  
-- Add dark/light mode  
-- Add project portfolio cards  
-- Add animations for Education and Experience timeline  
-- Add SEO enhancements for Google search  
-- Create a version for HanZi Tutoring business  
-
----
-
-## 🧘 Soft Skills Highlighted in Website  
-
-- Communication  
-- Leadership  
-- Team Collaboration  
-- Time Management  
-- Adaptability  
-- Problem Solving  
-- Lifelong Learning  
+* Python
+* SQL
+* FastAPI
+* Database Systems
+* Web Technologies
 
 ---
 
-## 👩‍💻 About Me  
+## Selected Business Solutions
 
-A summary included on my webpage:  
+### Workforce Administration Automation
 
-Hi, I’m **Lin Zhi (Sally)** — a passionate learner pursuing **Information Technology at NUS**, with strong interest in web development, data analytics, and building tech-enabled solutions.  
-I enjoy combining creativity and logic to create digital experiences that are clean, elegant, and impactful.
+Developed automation workflows to improve administrative efficiency, reduce manual processing and enhance operational visibility.
 
-My long-term dream is to grow as a technology-driven entrepreneur and build my own modern tuition center platform.
+### Compliance Management System
 
----
+Designed structured tracking and reporting processes to support workforce compliance management and regulatory requirements.
 
-## 📩 Contact  
+### AI-Powered Education Platform
 
-Feel free to reach out!  
-
-- **Email:** linzhiatwork@gmail.com
-- **LinkedIn:** https://linkedin.com/in/xxxxx  
-- **GitHub:** https://github.com/Sally-Gaohuang  
-
-Let’s connect for collaboration, software development work, or education projects.
+Building a digital education ecosystem that integrates registration, attendance, learning resources and AI-assisted learning support.
 
 ---
 
-## 📄 License  
+## Education
 
-This project is open-source and available under the **MIT License**.
+### National University of Singapore (NUS)
 
+Bachelor of Information Technology
 
+Focus Area: Business Analytics
 
+Key Areas of Study:
+
+* Data Analytics
+* Machine Learning
+* Application Development
+* Database Systems
+* Artificial Intelligence
+* Business Technology Solutions
+
+---
+
+## Professional Philosophy
+
+I believe that technology should support people rather than replace them.
+
+The most successful solutions are not necessarily the most complex ones; they are the ones that solve real business problems, simplify workflows and create measurable value.
+
+My goal is to bridge operational expertise with technology-enabled solutions to help organisations become more efficient, data-driven and future-ready.
+
+---
+
+## Contact
+
+If you are interested in discussing business automation, digital transformation, analytics or technology-enabled operational improvements, feel free to connect.
